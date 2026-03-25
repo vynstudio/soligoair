@@ -578,10 +578,10 @@ function submitLead() {
     fbc: (document.cookie.match(/_fbc=([^;]+)/) || [])[1] || ''
   };
 
-  fbq('track','Lead',{content_name:'funnel_'+A.service},{eventID:id});
-  gtagConversionLead();
-  if(typeof gtag!=='undefined') gtag('event','conversion',{'send_to':'AW-17179141807/SI3SCMmOyf8bEK_N0_8_','value':1.0,'currency':'USD'});
-  gtag('event','generate_lead',{event_category:'funnel',event_label:A.service});
+  try{fbq('track','Lead',{content_name:'funnel_'+A.service},{eventID:id});}catch(e){}
+  try{gtagConversionLead();}catch(e){}
+  try{if(typeof gtag!=='undefined') gtag('event','conversion',{'send_to':'AW-17179141807/SI3SCMmOyf8bEK_N0_8_','value':1.0,'currency':'USD'});}catch(e){}
+  try{gtag('event','generate_lead',{event_category:'funnel',event_label:A.service});}catch(e){}
   try{fetch('/.netlify/functions/submit-lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).catch(function(){});}catch(x){}
 
   document.getElementById('ok-title').textContent = A.service==='membership' ? 'Welcome to Air Care+, '+name+'!' : "You're all set, "+name+"!";
@@ -635,10 +635,10 @@ function dSubmit() {
     fbp: (document.cookie.match(/_fbp=([^;]+)/) || [])[1] || '',
     fbc: (document.cookie.match(/_fbc=([^;]+)/) || [])[1] || ''
   };
-  fbq('track','Lead',{content_name:'funnel_desktop_'+A.service},{eventID:id});
-  gtagConversionLead();
-  if(typeof gtag!=='undefined') gtag('event','conversion',{'send_to':'AW-17179141807/SI3SCMmOyf8bEK_N0_8_','value':1.0,'currency':'USD'});
-  gtag('event','generate_lead',{event_category:'funnel_desktop',event_label:A.service});
+  try{fbq('track','Lead',{content_name:'funnel_desktop_'+A.service},{eventID:id});}catch(e){}
+  try{gtagConversionLead();}catch(e){}
+  try{if(typeof gtag!=='undefined') gtag('event','conversion',{'send_to':'AW-17179141807/SI3SCMmOyf8bEK_N0_8_','value':1.0,'currency':'USD'});}catch(e){}
+  try{gtag('event','generate_lead',{event_category:'funnel_desktop',event_label:A.service});}catch(e){}
   try{fetch('/.netlify/functions/submit-lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).catch(function(){});}catch(x){}
   document.getElementById('d-ok-title').textContent = A.service==='membership' ? 'Welcome to Air Care+, '+name+'!' : "You're all set, "+name+"!";
   document.getElementById('d-ok-sub').textContent = A.service==='membership'
