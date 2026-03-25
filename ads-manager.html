@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soligo Air — Ads Manager</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#002C6D;--orange:#F75600;--blue:#0095D9;--bg:#f4f7fb;--white:#fff;--border:#e2e8f0;--text:#0A1628;--muted:#64748b;--green:#16a34a;--red:#dc2626;--font:'Poppins',sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;}
+nav{background:var(--navy);padding:0 1.5rem;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;gap:10px;}
+.nav-tag{font-size:10px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.6);padding:2px 9px;border-radius:20px;}
+.nav-acct{font-size:11px;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:5px;}
+.live-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;}
+.page{max-width:1100px;margin:0 auto;padding:1.5rem 1.25rem 4rem;}
+.top-bar{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:10px;}
+.page-title{font-size:18px;font-weight:800;color:var(--navy);}
+.page-sub{font-size:12px;color:var(--muted);margin-top:2px;}
+.top-actions{display:flex;gap:8px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-family:var(--font);font-size:12px;font-weight:600;cursor:pointer;border:none;transition:all .15s;white-space:nowrap;text-decoration:none;}
+.btn-primary{background:var(--orange);color:#fff;}.btn-primary:hover{background:#d94e00;}
+.btn-navy{background:var(--navy);color:#fff;}.btn-navy:hover{background:#001f55;}
+.btn-ghost{background:#fff;color:var(--navy);border:1px solid var(--border);}.btn-ghost:hover{border-color:var(--navy);}
+.btn-sm{padding:5px 11px;font-size:11px;}
+.btn-green{background:#dcfce7;color:var(--green);border:1px solid #bbf7d0;}.btn-green:hover{background:var(--green);color:#fff;}
+.btn-red{background:#fef2f2;color:var(--red);border:1px solid #fecaca;}.btn-red:hover{background:var(--red);color:#fff;}
+.btn-blue{background:#dbeafe;color:#1e40af;border:1px solid #bfdbfe;}.btn-blue:hover{background:#1e40af;color:#fff;}
+.error-box{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:14px 16px;margin-bottom:1.25rem;font-size:13px;color:var(--red);line-height:1.5;}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:1.25rem;}
+.mc{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.mc-label{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+.mc-val{font-size:22px;font-weight:800;color:var(--navy);line-height:1;}
+.mc-sub{font-size:10px;color:var(--muted);margin-top:3px;}
+.launch-bar{background:linear-gradient(135deg,var(--navy),#004EA8);border-radius:12px;padding:18px 20px;margin-bottom:1.25rem;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.launch-text h3{color:#fff;font-size:14px;font-weight:700;margin-bottom:3px;}
+.launch-text p{color:rgba(255,255,255,.55);font-size:12px;}
+.table-wrap{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:1.25rem;}
+.table-head{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid var(--border);}
+.table-title{font-size:13px;font-weight:700;color:var(--navy);}
+.table-sub{font-size:11px;color:var(--muted);}
+table{width:100%;border-collapse:collapse;}
+th{text-align:left;padding:9px 14px;font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;background:#f8fafc;border-bottom:1px solid var(--border);}
+td{padding:11px 14px;font-size:12px;color:var(--text);border-bottom:1px solid #f1f5f9;vertical-align:middle;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:#fafbfd;}
+.camp-name{font-weight:600;font-size:13px;max-width:220px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.row-sub{font-size:10px;color:var(--muted);margin-top:1px;}
+.pill{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;text-transform:uppercase;letter-spacing:.04em;}
+.pill::before{content:'';width:4px;height:4px;border-radius:50%;background:currentColor;}
+.pill-active{background:#dcfce7;color:var(--green);}
+.pill-paused{background:#fefce8;color:#ca8a04;}
+.pill-other{background:#f1f5f9;color:var(--muted);}
+.actions{display:flex;gap:5px;flex-wrap:wrap;}
+.empty{text-align:center;padding:2.5rem 1rem;color:var(--muted);font-size:13px;line-height:1.6;}
+.spinner{width:26px;height:26px;border:2.5px solid var(--border);border-top-color:var(--orange);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 10px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.expand-row td{padding:0!important;background:#f8fafc!important;}
+.expand-inner{padding:14px 18px 16px;border-top:1px solid var(--border);}
+.expand-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin-bottom:12px;}
+.expand-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:10px 12px;}
+.expand-label{font-size:9px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.expand-val{font-size:16px;font-weight:800;color:var(--navy);}
+.expand-sub{font-size:10px;color:var(--muted);margin-top:2px;}
+.adset-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:11px;}
+.adset-table th{background:#f1f5f9;padding:7px 10px;text-align:left;font-size:9px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--border);}
+.adset-table td{padding:9px 10px;border-bottom:1px solid #f1f5f9;color:var(--text);vertical-align:middle;}
+.adset-table tr:last-child td{border-bottom:none;}
+.ad-preview{display:flex;align-items:flex-start;gap:8px;padding:8px 0;border-bottom:1px solid #f1f5f9;}
+.ad-preview:last-child{border-bottom:none;}
+.ad-thumb{width:40px;height:40px;border-radius:6px;background:var(--bg);border:1px solid var(--border);overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.ad-thumb img{width:100%;height:100%;object-fit:cover;}
+.ad-info{flex:1;min-width:0;}
+.ad-name{font-size:11px;font-weight:600;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ad-body{font-size:10px;color:var(--muted);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:300px;}
+.tab-bar{display:flex;gap:1px;background:var(--border);border-radius:8px;overflow:hidden;margin-bottom:10px;width:fit-content;}
+.tab{padding:6px 14px;font-size:11px;font-weight:600;cursor:pointer;color:var(--muted);background:#fff;border:none;font-family:var(--font);transition:all .15s;}
+.tab.active{background:var(--navy);color:#fff;}
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:100;align-items:center;justify-content:center;padding:1rem;}
+.modal-bg.open{display:flex;}
+.modal{background:#fff;border-radius:14px;padding:24px;width:100%;max-width:460px;max-height:90vh;overflow-y:auto;}
+.modal-title{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:4px;}
+.modal-sub{font-size:12px;color:var(--muted);margin-bottom:18px;}
+.field{margin-bottom:12px;}
+.field label{display:block;font-size:10px;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;}
+.field input,.field select,.field textarea{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;font-family:var(--font);font-size:13px;color:var(--text);outline:none;}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--navy);}
+.field textarea{resize:vertical;min-height:70px;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.modal-section{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:16px 0 10px;padding-top:14px;border-top:1px solid var(--border);}
+.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:16px;}
+.toast{position:fixed;bottom:20px;right:20px;background:var(--navy);color:#fff;padding:11px 18px;border-radius:9px;font-size:12px;font-weight:500;z-index:200;transform:translateY(60px);opacity:0;transition:all .25s;pointer-events:none;max-width:300px;}
+.toast.show{transform:translateY(0);opacity:1;}.toast.ok{background:var(--green);}.toast.err{background:var(--red);}
+.badge{display:inline-block;font-size:9px;font-weight:600;padding:1px 6px;border-radius:10px;margin-left:5px;vertical-align:middle;}
+.badge-blue{background:#dbeafe;color:#1e40af;}
+.badge-orange{background:#ffedd5;color:#c2410c;}
+.insight-bar{background:#f0f6ff;border:1px solid #bfdbfe;border-radius:8px;padding:10px 14px;margin-bottom:10px;font-size:12px;color:#1e40af;line-height:1.5;}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-brand">
+    <img src="/logo-sm.png" style="width:26px;height:26px;object-fit:contain;" alt="Soligo">
+    Soligo Air <span class="nav-tag">Ads Manager</span>
+  </div>
+  <div class="nav-acct"><span class="live-dot"></span> act_824057136964373</div>
+</nav>
+
+<div class="page">
+  <div class="top-bar">
+    <div>
+      <div class="page-title">Campaign Manager</div>
+      <div class="page-sub">Meta · Facebook & Instagram · Last 30 days</div>
+    </div>
+    <div class="top-actions">
+      <button class="btn btn-ghost" onclick="loadAll()">↻ Refresh</button>
+      <button class="btn btn-ghost" onclick="openAdSet()">+ Ad Set</button>
+      <button class="btn btn-primary" onclick="openCreate()">+ Campaign</button>
+    </div>
+  </div>
+
+  <div id="error-area"></div>
+
+  <div class="metrics">
+    <div class="mc"><div class="mc-label">Total Spend</div><div class="mc-val" id="m-spend">—</div><div class="mc-sub">last 30 days</div></div>
+    <div class="mc"><div class="mc-label">Avg CPC</div><div class="mc-val" id="m-cpc">—</div><div class="mc-sub">cost per click</div></div>
+    <div class="mc"><div class="mc-label">Clicks</div><div class="mc-val" id="m-clicks">—</div><div class="mc-sub">link clicks</div></div>
+    <div class="mc"><div class="mc-label">Impressions</div><div class="mc-val" id="m-imp">—</div><div class="mc-sub">total reach</div></div>
+    <div class="mc"><div class="mc-label">Active</div><div class="mc-val" id="m-active" style="color:var(--green)">—</div><div class="mc-sub">live now</div></div>
+    <div class="mc"><div class="mc-label">CPM</div><div class="mc-val" id="m-cpm">—</div><div class="mc-sub">per 1k views</div></div>
+    <div class="mc"><div class="mc-label">Cost/Lead</div><div class="mc-val" id="m-cpl">—</div><div class="mc-sub">avg result cost</div></div>
+  </div>
+
+  <div id="insight-area"></div>
+
+  <div class="launch-bar">
+    <div class="launch-text">
+      <h3>🚀 Launch Air Care+ Campaign</h3>
+      <p>Pre-built · Orlando homeowners · $30/day · Leads · soligoair.shop/aircare</p>
+    </div>
+    <button class="btn btn-primary" onclick="launchAirCare()">Launch Now</button>
+  </div>
+
+  <div class="launch-bar" style="background:linear-gradient(135deg,#1a1a2e,#16213e);">
+    <div class="launch-text">
+      <h3>🏠 Launch AC Replacement Campaign</h3>
+      <p>Pre-built · Orlando homeowners · $30/day · Leads · soligoair.shop/funnel · Add video after</p>
+    </div>
+    <button class="btn btn-primary" onclick="launchReplacement()">Launch Now</button>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-head">
+      <div class="table-title">All Campaigns <span style="font-size:11px;font-weight:400;color:var(--muted);margin-left:6px;">— click a row to expand</span></div>
+      <div class="table-sub" id="last-updated"></div>
+    </div>
+    <div id="table-area"><div class="empty"><div class="spinner"></div>Connecting to Meta API…</div></div>
+  </div>
+</div>
+
+<!-- CREATE CAMPAIGN MODAL -->
+<div class="modal-bg" id="create-modal">
+  <div class="modal">
+    <div class="modal-title">New Campaign</div>
+    <div class="modal-sub">Created as PAUSED — activate when ready.</div>
+    <div class="field"><label>Campaign Name</label><input type="text" id="new-name" placeholder="Soligo Air | Service | Leads | Orlando | 2026"></div>
+    <div class="field"><label>Objective</label>
+      <select id="new-obj">
+        <option value="OUTCOME_LEADS">Leads</option>
+        <option value="OUTCOME_TRAFFIC">Traffic</option>
+        <option value="OUTCOME_AWARENESS">Awareness</option>
+        <option value="OUTCOME_ENGAGEMENT">Engagement</option>
+      </select>
+    </div>
+    <div class="field"><label>Daily Budget ($)</label><input type="number" id="new-budget" value="30" min="1"></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal('create-modal')">Cancel</button>
+      <button class="btn btn-primary" onclick="createCampaign()">Create Campaign</button>
+    </div>
+  </div>
+</div>
+
+<!-- BUDGET MODAL -->
+<div class="modal-bg" id="budget-modal">
+  <div class="modal">
+    <div class="modal-title">Update Daily Budget</div>
+    <div class="modal-sub" id="budget-modal-sub"></div>
+    <div class="field"><label>Daily Budget ($)</label><input type="number" id="budget-val" value="50" min="1"></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal('budget-modal')">Cancel</button>
+      <button class="btn btn-primary" onclick="confirmBudget()">Update Budget</button>
+    </div>
+  </div>
+</div>
+
+<!-- AD SET MODAL -->
+<div class="modal-bg" id="adset-modal">
+  <div class="modal">
+    <div class="modal-title">Create Ad Set</div>
+    <div class="modal-sub">Target Orlando homeowners — attach to an existing campaign.</div>
+    <div class="field"><label>Campaign</label><select id="as-campaign"></select></div>
+    <div class="field"><label>Ad Set Name</label><input type="text" id="as-name" placeholder="Cold | Orlando | Homeowners | 28-65"></div>
+    <div class="field-row">
+      <div class="field"><label>Daily Budget ($)</label><input type="number" id="as-budget" value="30" min="1"></div>
+      <div class="field"><label>Optimization Goal</label>
+        <select id="as-goal">
+          <option value="LEAD_GENERATION">Lead Generation</option>
+          <option value="LINK_CLICKS">Link Clicks</option>
+          <option value="REACH">Reach</option>
+          <option value="IMPRESSIONS">Impressions</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-section">Targeting</div>
+    <div class="field-row">
+      <div class="field"><label>Age Min</label><input type="number" id="as-age-min" value="28" min="18" max="65"></div>
+      <div class="field"><label>Age Max</label><input type="number" id="as-age-max" value="65" min="18" max="65"></div>
+    </div>
+    <div class="field"><label>Location</label>
+      <select id="as-location">
+        <option value="orlando">Orlando, FL +25mi</option>
+        <option value="kissimmee">Kissimmee, FL +15mi</option>
+        <option value="sanford">Sanford, FL +15mi</option>
+        <option value="clermont">Clermont, FL +15mi</option>
+      </select>
+    </div>
+    <div class="field"><label>Audience</label>
+      <select id="as-audience">
+        <option value="homeowners">Homeowners (broad)</option>
+        <option value="homeowners_hi">Homeowners (high income)</option>
+        <option value="all">All adults in area</option>
+      </select>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal('adset-modal')">Cancel</button>
+      <button class="btn btn-primary" onclick="createAdSet()">Create Ad Set</button>
+    </div>
+  </div>
+</div>
+
+<!-- AD CREATIVE MODAL -->
+<div class="modal-bg" id="ad-modal">
+  <div class="modal">
+    <div class="modal-title">Create Ad</div>
+    <div class="modal-sub" id="ad-modal-sub">Add a creative to this ad set.</div>
+    <div class="field"><label>Ad Name</label><input type="text" id="ad-name" placeholder="C1 | Air Care+ | Family | Orlando"></div>
+    <div class="field"><label>Primary Text (Caption)</label>
+      <textarea id="ad-body" placeholder="Another scorching Florida summer is on its way — but your home doesn't have to feel like an oven..."></textarea>
+    </div>
+    <div class="field"><label>Headline</label><input type="text" id="ad-headline" placeholder="Breathe Easy. Live Better."></div>
+    <div class="field"><label>Description</label><input type="text" id="ad-desc" placeholder="From $29/mo · No setup fee · Cancel anytime"></div>
+    <div class="field-row">
+      <div class="field"><label>Call to Action</label>
+        <select id="ad-cta">
+          <option value="GET_QUOTE">Get Quote</option>
+          <option value="LEARN_MORE">Learn More</option>
+          <option value="SIGN_UP">Sign Up</option>
+          <option value="SUBSCRIBE">Subscribe</option>
+          <option value="CONTACT_US">Contact Us</option>
+          <option value="BOOK_NOW">Book Now</option>
+        </select>
+      </div>
+      <div class="field"><label>Destination URL</label><input type="text" id="ad-url" value="https://soligoair.shop/aircare"></div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal('ad-modal')">Cancel</button>
+      <button class="btn btn-primary" onclick="createAd()">Copy Ad Text</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+var TOKEN = 'EAA7rtlAOrhMBQ6kZBqJxjtoYH65p7MW3ILfCAuS8UHag267CUZBY3jLVBSng8WsiiKgOKdSbg7mdOgXSdfhSwy3ktUJgkrWsZAMyvBdqZC00ch0ekwgYebxyTq8IgwtBDwrVEcNrZAdlIDJr6Bns53zpjnfdZCzsE7Iy3fZBhZCUZBpoiNjk4fBZAt4iDFa7P8B9fdNHfspB807fIUgi4DTDkeuZBhD2R9jRTF1gXrNoh8asXYwRAJkbtVy7EzJNGF6Py89iURPrpAffj9OxPL1gg0XfRRhGQZDZD';
+var ACCT = 'act_824057136964373';
+var BASE = 'https://graph.facebook.com/v19.0';
+var campaigns = [], insights = {}, adsets = {}, ads = {}, expanded = {}, activeBudgetId = null, activeAdSetId = null;
+
+function toast(msg, type) {
+  var el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = 'toast show' + (type ? ' ' + type : '');
+  setTimeout(function(){ el.className = 'toast'; }, 3000);
+}
+function setError(msg) { document.getElementById('error-area').innerHTML = msg ? '<div class="error-box"><strong>Error:</strong> ' + msg + '</div>' : ''; }
+
+async function metaGet(path) {
+  var sep = path.includes('?') ? '&' : '?';
+  var res = await fetch(BASE + path + sep + 'access_token=' + TOKEN);
+  return res.json();
+}
+async function metaPost(path, params) {
+  var body = new URLSearchParams(params);
+  body.append('access_token', TOKEN);
+  var res = await fetch(BASE + path, { method: 'POST', body: body });
+  return res.json();
+}
+
+async function loadAll() {
+  document.getElementById('table-area').innerHTML = '<div class="empty"><div class="spinner"></div>Loading campaigns…</div>';
+  setError('');
+  try {
+    var campData = await metaGet('/' + ACCT + '/campaigns?fields=id,name,status,objective,daily_budget,start_time&limit=50');
+    if (campData.error) { setError(campData.error.message); document.getElementById('table-area').innerHTML = '<div class="empty">Failed to load.</div>'; return; }
+    campaigns = campData.data || [];
+
+    var insightData = await metaGet('/' + ACCT + '/insights?fields=campaign_name,campaign_id,spend,cpc,cpm,ctr,clicks,impressions,reach,cost_per_result,results&date_preset=last_30d&level=campaign');
+    insights = {};
+    if (insightData.data) insightData.data.forEach(function(i){ insights[i.campaign_id] = i; });
+
+    renderMetrics();
+    renderInsight();
+    renderTable();
+    document.getElementById('last-updated').textContent = 'Updated ' + new Date().toLocaleTimeString();
+  } catch(err) {
+    setError(err.message);
+    document.getElementById('table-area').innerHTML = '<div class="empty">Failed to connect.<br><button class="btn btn-ghost btn-sm" onclick="loadAll()" style="margin-top:10px;">Retry</button></div>';
+  }
+}
+
+function fmtMoney(n) { return parseFloat(n||0) > 0 ? '$' + parseFloat(n).toFixed(2) : '—'; }
+function fmtK(n) { n = parseInt(n||0); return n >= 1000 ? (n/1000).toFixed(1)+'k' : (n > 0 ? String(n) : '—'); }
+function pct(n) { return parseFloat(n||0) > 0 ? parseFloat(n).toFixed(2) + '%' : '—'; }
+
+function renderMetrics() {
+  var spend=0,clicks=0,imp=0,cpcSum=0,cpcN=0,cpmSum=0,cpmN=0,active=0,cplSum=0,cplN=0;
+  campaigns.forEach(function(c){
+    if(c.status==='ACTIVE') active++;
+    var ins = insights[c.id] || {};
+    spend += parseFloat(ins.spend||0);
+    clicks += parseInt(ins.clicks||0);
+    imp += parseInt(ins.impressions||0);
+    if(ins.cpc){ cpcSum+=parseFloat(ins.cpc); cpcN++; }
+    if(ins.cpm){ cpmSum+=parseFloat(ins.cpm); cpmN++; }
+    if(ins.cost_per_result && ins.cost_per_result[0]){ cplSum+=parseFloat(ins.cost_per_result[0].value||0); cplN++; }
+  });
+  document.getElementById('m-spend').textContent = spend>0 ? '$'+Math.round(spend) : '—';
+  document.getElementById('m-cpc').textContent = cpcN>0 ? '$'+(cpcSum/cpcN).toFixed(2) : '—';
+  document.getElementById('m-clicks').textContent = fmtK(clicks);
+  document.getElementById('m-imp').textContent = fmtK(imp);
+  document.getElementById('m-active').textContent = active;
+  document.getElementById('m-cpm').textContent = cpmN>0 ? '$'+(cpmSum/cpmN).toFixed(2) : '—';
+  document.getElementById('m-cpl').textContent = cplN>0 ? '$'+(cplSum/cplN).toFixed(2) : '—';
+}
+
+function renderInsight() {
+  var bestCpc = null, worstCpc = null, bestVal = Infinity, worstVal = 0;
+  campaigns.forEach(function(c){
+    var ins = insights[c.id] || {};
+    if(!ins.cpc) return;
+    var v = parseFloat(ins.cpc);
+    if(v < bestVal){ bestVal=v; bestCpc=c; }
+    if(v > worstVal){ worstVal=v; worstCpc=c; }
+  });
+  if(!bestCpc) return;
+  var html = '<div class="insight-bar">💡 <strong>Best CPC:</strong> "' + bestCpc.name.split('|')[0].trim() + '" at $' + bestVal.toFixed(2) + '/click.';
+  if(worstCpc && worstCpc.id !== bestCpc.id) html += ' <strong>Worst CPC:</strong> "' + worstCpc.name.split('|')[0].trim() + '" at $' + worstVal.toFixed(2) + ' — ' + Math.round(worstVal/bestVal) + 'x more expensive. Consider pausing it.</div>';
+  document.getElementById('insight-area').innerHTML = html;
+}
+
+function renderTable() {
+  if (!campaigns.length) { document.getElementById('table-area').innerHTML = '<div class="empty">No campaigns yet.</div>'; return; }
+  var bestCpcId = null, bestCpc = Infinity;
+  campaigns.forEach(function(c){ var ins=insights[c.id]||{}; if(ins.cpc&&parseFloat(ins.cpc)<bestCpc){bestCpc=parseFloat(ins.cpc);bestCpcId=c.id;} });
+  var sorted = campaigns.slice().sort(function(a,b){ return parseFloat((insights[b.id]||{}).spend||0)-parseFloat((insights[a.id]||{}).spend||0); });
+  var rows = sorted.map(function(c){
+    var ins=insights[c.id]||{};
+    var spend=parseFloat(ins.spend||0), cpc=parseFloat(ins.cpc||0), clicks=parseInt(ins.clicks||0), ctr=parseFloat(ins.ctr||0);
+    var budget=c.daily_budget?'$'+Math.round(parseInt(c.daily_budget)/100)+'/day':'—';
+    var pc=c.status==='ACTIVE'?'pill-active':c.status==='PAUSED'?'pill-paused':'pill-other';
+    var badge=c.id===bestCpcId&&cpc>0?'<span class="badge badge-blue">best CPC</span>':'';
+    var expandRow = expanded[c.id] ? buildExpandRow(c) : '';
+    return '<tr onclick="toggleExpand(\''+c.id+'\')" style="cursor:pointer;">' +
+      '<td><div class="camp-name">'+c.name+badge+'</div><div class="row-sub">'+(c.objective||'').replace('OUTCOME_','')+'</div></td>' +
+      '<td><span class="pill '+pc+'">'+c.status.toLowerCase()+'</span></td>' +
+      '<td>'+budget+'</td>' +
+      '<td>'+(spend>0?'$'+spend.toFixed(2):'—')+'</td>' +
+      '<td>'+(cpc>0?'$'+cpc.toFixed(2):'—')+'</td>' +
+      '<td>'+(clicks>0?fmtK(clicks):'—')+'</td>' +
+      '<td>'+pct(ctr)+'</td>' +
+      '<td onclick="event.stopPropagation()"><div class="actions">'+
+        (c.status==='ACTIVE'
+          ?'<button class="btn btn-sm btn-red" onclick="pauseCamp(\''+c.id+'\')">Pause</button>'
+          :'<button class="btn btn-sm btn-green" onclick="resumeCamp(\''+c.id+'\')">Activate</button>')+
+        '<button class="btn btn-sm btn-ghost" onclick="openBudget(\''+c.id+'\',\''+c.name.replace(/'/g,"\\'")+'\')" >Budget</button>'+
+        '<button class="btn btn-sm btn-blue" onclick="drillDown(\''+c.id+'\')">↓ Details</button>'+
+      '</div></td>'+
+    '</tr>' + expandRow;
+  }).join('');
+  document.getElementById('table-area').innerHTML =
+    '<table><thead><tr><th>Campaign</th><th>Status</th><th>Budget</th><th>Spend</th><th>CPC</th><th>Clicks</th><th>CTR</th><th>Actions</th></tr></thead><tbody>'+rows+'</tbody></table>';
+}
+
+function buildExpandRow(c) {
+  var ins = insights[c.id] || {};
+  var asets = adsets[c.id] || [];
+  var adList = ads[c.id] || [];
+  var adsetRows = asets.length ? asets.map(function(a){
+    return '<tr>' +
+      '<td>'+a.name+'</td>' +
+      '<td><span class="pill '+(a.status==='ACTIVE'?'pill-active':'pill-paused')+'">'+a.status.toLowerCase()+'</span></td>' +
+      '<td>'+(a.daily_budget?'$'+Math.round(parseInt(a.daily_budget)/100)+'/day':'—')+'</td>' +
+      '<td>'+(a.optimization_goal||'—').replace(/_/g,' ')+'</td>' +
+      '<td onclick="event.stopPropagation()"><button class="btn btn-sm btn-ghost" onclick="openAdForSet(\''+a.id+'\',\''+a.name.replace(/'/g,"\\'")+'\')">+ Ad</button></td>' +
+    '</tr>';
+  }).join('') : '<tr><td colspan="5" style="color:var(--muted);font-size:11px;padding:10px;">No ad sets loaded yet.</td></tr>';
+
+  var adRows = adList.length ? adList.map(function(a){
+    return '<div class="ad-preview">'+
+      '<div class="ad-thumb">'+( a.creative&&a.creative.thumbnail_url ? '<img src="'+a.creative.thumbnail_url+'">' : '📸')+'</div>'+
+      '<div class="ad-info">'+
+        '<div class="ad-name">'+a.name+'</div>'+
+        '<div class="ad-body">'+(a.creative&&a.creative.body||'No body text available')+'</div>'+
+        '<div style="margin-top:4px;"><span class="pill '+(a.status==='ACTIVE'?'pill-active':'pill-paused')+'" style="font-size:9px;">'+a.status.toLowerCase()+'</span></div>'+
+      '</div>'+
+    '</div>';
+  }).join('') : '<div style="font-size:11px;color:var(--muted);padding:8px 0;">No ads loaded yet.</div>';
+
+  return '<tr class="expand-row"><td colspan="8"><div class="expand-inner">'+
+    '<div class="expand-grid">'+
+      '<div class="expand-card"><div class="expand-label">Spend</div><div class="expand-val">'+(parseFloat(ins.spend||0)>0?'$'+parseFloat(ins.spend).toFixed(2):'$0')+'</div><div class="expand-sub">last 30 days</div></div>'+
+      '<div class="expand-card"><div class="expand-label">Reach</div><div class="expand-val">'+fmtK(ins.reach||0)+'</div><div class="expand-sub">unique people</div></div>'+
+      '<div class="expand-card"><div class="expand-label">CTR</div><div class="expand-val">'+pct(ins.ctr)+'</div><div class="expand-sub">click-through rate</div></div>'+
+      '<div class="expand-card"><div class="expand-label">Cost/Result</div><div class="expand-val">'+(ins.cost_per_result&&ins.cost_per_result[0]?'$'+parseFloat(ins.cost_per_result[0].value).toFixed(2):'—')+'</div><div class="expand-sub">per lead</div></div>'+
+    '</div>'+
+    '<div class="tab-bar">'+
+      '<button class="tab active" id="tab-adsets-'+c.id+'" onclick="showTab(\''+c.id+'\',\'adsets\')">Ad Sets ('+asets.length+')</button>'+
+      '<button class="tab" id="tab-ads-'+c.id+'" onclick="showTab(\''+c.id+'\',\'ads\')">Ads ('+adList.length+')</button>'+
+    '</div>'+
+    '<div id="tab-content-adsets-'+c.id+'">'+
+      '<table class="adset-table"><thead><tr><th>Ad Set</th><th>Status</th><th>Budget</th><th>Goal</th><th>Action</th></tr></thead><tbody>'+adsetRows+'</tbody></table>'+
+    '</div>'+
+    '<div id="tab-content-ads-'+c.id+'" style="display:none;">'+adRows+'</div>'+
+  '</div></td></tr>';
+}
+
+function showTab(cid, tab) {
+  ['adsets','ads'].forEach(function(t){
+    var btn = document.getElementById('tab-'+t+'-'+cid);
+    var content = document.getElementById('tab-content-'+t+'-'+cid);
+    if(btn) btn.className = 'tab' + (t===tab?' active':'');
+    if(content) content.style.display = t===tab?'block':'none';
+  });
+}
+
+async function toggleExpand(cid) {
+  expanded[cid] = !expanded[cid];
+  if(expanded[cid]) {
+    if(!adsets[cid]) await loadAdSets(cid);
+    if(!ads[cid]) await loadAds(cid);
+  }
+  renderTable();
+}
+
+async function drillDown(cid) {
+  expanded[cid] = true;
+  if(!adsets[cid]) await loadAdSets(cid);
+  if(!ads[cid]) await loadAds(cid);
+  renderTable();
+}
+
+async function loadAdSets(cid) {
+  var data = await metaGet('/' + cid + '/adsets?fields=id,name,status,daily_budget,optimization_goal,targeting&limit=20');
+  adsets[cid] = data.data || [];
+}
+
+async function loadAds(cid) {
+  var asets = adsets[cid] || [];
+  var allAds = [];
+  for(var i=0; i<asets.length; i++){
+    var data = await metaGet('/' + asets[i].id + '/ads?fields=id,name,status,creative{thumbnail_url,body,title,call_to_action_type}&limit=20');
+    if(data.data) allAds = allAds.concat(data.data);
+  }
+  ads[cid] = allAds;
+}
+
+async function pauseCamp(id) {
+  toast('Pausing…');
+  var r = await metaPost('/' + id, { status: 'PAUSED' });
+  if(r.success||r.id){ toast('Paused', 'ok'); loadAll(); }
+  else toast((r.error&&r.error.message)||'Failed', 'err');
+}
+async function resumeCamp(id) {
+  toast('Activating…');
+  var r = await metaPost('/' + id, { status: 'ACTIVE' });
+  if(r.success||r.id){ toast('Active!', 'ok'); loadAll(); }
+  else toast((r.error&&r.error.message)||'Failed', 'err');
+}
+
+function openBudget(id, name) {
+  activeBudgetId = id;
+  document.getElementById('budget-modal-sub').textContent = name;
+  document.getElementById('budget-modal').classList.add('open');
+}
+async function confirmBudget() {
+  var amt = parseFloat(document.getElementById('budget-val').value);
+  if(!amt||amt<1){ toast('Enter a valid budget','err'); return; }
+  toast('Updating…');
+  var r = await metaPost('/' + activeBudgetId, { daily_budget: String(Math.round(amt*100)) });
+  if(r.success||r.id){ toast('Budget updated','ok'); closeModal('budget-modal'); loadAll(); }
+  else toast((r.error&&r.error.message)||'Failed','err');
+}
+
+function openCreate() { document.getElementById('create-modal').classList.add('open'); }
+async function createCampaign() {
+  var name = document.getElementById('new-name').value.trim();
+  var obj = document.getElementById('new-obj').value;
+  var budget = Math.round(parseFloat(document.getElementById('new-budget').value||30)*100);
+  if(!name){ toast('Enter a name','err'); return; }
+  toast('Creating…');
+  var r = await metaPost('/' + ACCT + '/campaigns', { name:name, objective:obj, status:'PAUSED', special_ad_categories:'[]', daily_budget:String(budget) });
+  if(r.id){ toast('Campaign created (paused)','ok'); closeModal('create-modal'); loadAll(); }
+  else toast((r.error&&r.error.message)||'Failed','err');
+}
+
+function openAdSet() {
+  var sel = document.getElementById('as-campaign');
+  sel.innerHTML = campaigns.map(function(c){ return '<option value="'+c.id+'">'+c.name+'</option>'; }).join('');
+  document.getElementById('adset-modal').classList.add('open');
+}
+
+async function createAdSet() {
+  var cid = document.getElementById('as-campaign').value;
+  var name = document.getElementById('as-name').value.trim();
+  var budget = Math.round(parseFloat(document.getElementById('as-budget').value||30)*100);
+  var goal = document.getElementById('as-goal').value;
+  var ageMin = document.getElementById('as-age-min').value;
+  var ageMax = document.getElementById('as-age-max').value;
+  if(!name){ toast('Enter a name','err'); return; }
+  toast('Creating ad set…');
+  var targeting = JSON.stringify({
+    geo_locations:{cities:[{key:'2418779',name:'Orlando',region:'Florida',country:'US',radius:25,distance_unit:'mile'}]},
+    age_min:parseInt(ageMin), age_max:parseInt(ageMax)
+  });
+  var r = await metaPost('/' + ACCT + '/adsets', {
+    name:name, campaign_id:cid, daily_budget:String(budget),
+    billing_event:'IMPRESSIONS', optimization_goal:goal,
+    targeting:targeting, status:'PAUSED'
+  });
+  if(r.id){ toast('Ad set created (paused)','ok'); closeModal('adset-modal'); adsets[cid]=null; loadAll(); }
+  else toast((r.error&&r.error.message)||'Failed','err');
+}
+
+function openAdForSet(asid, name) {
+  activeAdSetId = asid;
+  document.getElementById('ad-modal-sub').textContent = 'Ad set: ' + name;
+  document.getElementById('ad-modal').classList.add('open');
+}
+
+function createAd() {
+  var body = document.getElementById('ad-body').value.trim();
+  var headline = document.getElementById('ad-headline').value.trim();
+  var desc = document.getElementById('ad-desc').value.trim();
+  var cta = document.getElementById('ad-cta').value;
+  var url = document.getElementById('ad-url').value.trim();
+  var name = document.getElementById('ad-name').value.trim();
+  var text = 'AD NAME: ' + name + '\n\nPRIMARY TEXT:\n' + body + '\n\nHEADLINE: ' + headline + '\nDESCRIPTION: ' + desc + '\nCTA: ' + cta + '\nURL: ' + url;
+  navigator.clipboard.writeText(text).then(function(){
+    toast('Ad copy copied to clipboard — paste it into Meta Ads Manager creative editor', 'ok');
+    closeModal('ad-modal');
+  }).catch(function(){
+    toast('Copy failed — select all text in the modal manually','err');
+  });
+}
+
+async function launchReplacement() {
+  if(!confirm('Create AC Replacement campaign?\n\nName: Soligo Air | AC Replacement | Video | Orlando | 2026\nObjective: Leads · Budget: $30/day · Status: PAUSED\n\nYou will add the video creative inside Meta Ads Manager after.')) return;
+  toast('Creating campaign…');
+
+  var camp = await metaPost('/' + ACCT + '/campaigns', {
+    name: 'Soligo Air | AC Replacement | Video | Orlando | 2026',
+    objective: 'OUTCOME_LEADS',
+    status: 'PAUSED',
+    special_ad_categories: '[]',
+    daily_budget: '3000'
+  });
+
+  if (!camp.id) { toast((camp.error&&camp.error.message)||'Campaign failed', 'err'); return; }
+  toast('Campaign created — building ad set…');
+
+  var targeting = JSON.stringify({
+    geo_locations: {
+      custom_locations: [{ latitude: 28.5383, longitude: -81.3792, radius: 25, distance_unit: 'mile' }]
+    },
+    age_min: 28,
+    age_max: 65
+  });
+
+  var adset = await metaPost('/' + ACCT + '/adsets', {
+    name: 'Cold | Orlando Homeowners | Video | 28-65',
+    campaign_id: camp.id,
+    daily_budget: '3000',
+    billing_event: 'IMPRESSIONS',
+    optimization_goal: 'OFFSITE_CONVERSIONS',
+    pixel_id: '1231230569192614',
+    promoted_object: JSON.stringify({ pixel_id: '1231230569192614', custom_event_type: 'LEAD' }),
+    targeting: targeting,
+    status: 'PAUSED'
+  });
+
+  if (!adset.id) { toast((adset.error&&adset.error.message)||'Ad set failed', 'err'); return; }
+  toast('Ad set created — done!', 'ok');
+
+  setTimeout(function(){
+    alert('Campaign & ad set created!\n\nNext steps in Meta Ads Manager:\n1. Go to adsmanager.facebook.com\n2. Find "Soligo Air | AC Replacement | Video | Orlando | 2026"\n3. Open the ad set → Create Ad\n4. Upload your video\n5. Paste the ad copy\n6. Set CTA to "Get Quote" → URL: soligoair.shop/funnel\n7. Activate when ready');
+    loadAll();
+  }, 1000);
+}
+
+async function launchAirCare() {
+  if(!confirm('Create Air Care+ campaign?\n\nName: Soligo Air | Air Care+ | Leads | Orlando | 2026\nObjective: Leads · Budget: $30/day · Status: PAUSED')) return;
+  toast('Creating…');
+  var r = await metaPost('/' + ACCT + '/campaigns', { name:'Soligo Air | Air Care+ | Leads | Orlando | 2026', objective:'OUTCOME_LEADS', status:'PAUSED', special_ad_categories:'[]', daily_budget:'3000' });
+  if(r.id){ toast('Air Care+ campaign created!','ok'); loadAll(); }
+  else toast((r.error&&r.error.message)||'Failed','err');
+}
+
+function closeModal(id) { document.getElementById(id).classList.remove('open'); activeBudgetId=null; }
+document.querySelectorAll('.modal-bg').forEach(function(bg){
+  bg.addEventListener('click', function(e){ if(e.target===bg) closeModal(bg.id); });
+});
+
+loadAll();
+</script>
+</body>
+</html>

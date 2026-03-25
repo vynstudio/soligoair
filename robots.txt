@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://soligoair.shop/sitemap.xml
+
+# Block internal/function paths
+Disallow: /.netlify/
+Disallow: /api/
+Disallow: /funnel.html
+
+# Crawl delay
+Crawl-delay: 1

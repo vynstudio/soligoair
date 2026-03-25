@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soligo Air — Google Ads Manager</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#002C6D;--orange:#F75600;--blue:#0095D9;--green:#16a34a;--red:#dc2626;--bg:#f4f7fb;--white:#fff;--border:#e2e8f0;--text:#0A1628;--muted:#64748b;--font:'Poppins',sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;}
+nav{background:#1a73e8;padding:0 1.5rem;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{color:#fff;font-size:15px;font-weight:700;display:flex;align-items:center;gap:10px;}
+.nav-tag{font-size:10px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);padding:2px 9px;border-radius:20px;}
+.nav-right{font-size:11px;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:6px;}
+.live-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;}
+.page{max-width:1080px;margin:0 auto;padding:1.5rem 1.25rem 4rem;}
+.top-bar{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:10px;}
+.page-title{font-size:18px;font-weight:800;color:var(--navy);}
+.page-sub{font-size:12px;color:var(--muted);margin-top:2px;}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-family:var(--font);font-size:12px;font-weight:600;cursor:pointer;border:none;transition:all .15s;white-space:nowrap;}
+.btn-ghost{background:#fff;color:var(--navy);border:1px solid var(--border);}.btn-ghost:hover{border-color:var(--navy);}
+.btn-google{background:#1a73e8;color:#fff;}.btn-google:hover{background:#1557b0;}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:1.25rem;}
+.mc{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.mc-label{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+.mc-val{font-size:22px;font-weight:800;color:var(--navy);line-height:1;}
+.mc-sub{font-size:10px;color:var(--muted);margin-top:3px;}
+.table-wrap{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:1.5rem;}
+.table-head{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:1px solid var(--border);}
+.table-title{font-size:13px;font-weight:700;color:var(--navy);}
+.table-sub{font-size:11px;color:var(--muted);}
+table{width:100%;border-collapse:collapse;}
+th{text-align:left;padding:9px 14px;font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;background:#f8fafc;border-bottom:1px solid var(--border);}
+td{padding:11px 14px;font-size:12px;color:var(--text);border-bottom:1px solid #f1f5f9;vertical-align:middle;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:#fafbfd;}
+.camp-name{font-weight:600;font-size:13px;}
+.camp-sub{font-size:10px;color:var(--muted);margin-top:1px;}
+.pill{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;text-transform:uppercase;}
+.pill::before{content:'';width:4px;height:4px;border-radius:50%;background:currentColor;}
+.pill-active{background:#dcfce7;color:var(--green);}
+.pill-paused{background:#fefce8;color:#ca8a04;}
+.pill-removed{background:#fef2f2;color:var(--red);}
+.empty{text-align:center;padding:3rem 1rem;color:var(--muted);font-size:13px;line-height:1.7;}
+.spinner{width:26px;height:26px;border:2.5px solid var(--border);border-top-color:#1a73e8;border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 10px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.setup-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px;margin-bottom:1.25rem;}
+.setup-title{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:6px;}
+.setup-sub{font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.6;}
+.step-list{display:flex;flex-direction:column;gap:16px;}
+.step{display:flex;gap:14px;align-items:flex-start;}
+.step-num{width:28px;height:28px;border-radius:50%;background:#1a73e8;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.step-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:3px;}
+.step-desc{font-size:12px;color:var(--muted);line-height:1.6;}
+.code-block{background:#0f172a;border-radius:10px;padding:16px;margin-top:12px;font-family:monospace;font-size:11px;color:#94a3b8;line-height:1.7;overflow-x:auto;white-space:pre;position:relative;}
+.copy-btn{position:absolute;top:10px;right:10px;background:#1e293b;border:1px solid #334155;color:#94a3b8;border-radius:6px;padding:4px 10px;font-size:10px;cursor:pointer;font-family:var(--font);}
+.copy-btn:hover{color:#fff;}
+.sync-bar{background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;padding:12px 16px;margin-bottom:1.25rem;font-size:12px;color:#0369a1;display:none;}
+.sync-bar.show{display:flex;align-items:center;gap:8px;}
+.error-box{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:12px 16px;margin-bottom:1.25rem;font-size:12px;color:var(--red);display:none;}
+.error-box.show{display:block;}
+.insight-bar{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:12px 16px;margin-bottom:1.25rem;font-size:12px;color:#166534;line-height:1.6;display:none;}
+.insight-bar.show{display:block;}
+.tab-btns{display:flex;gap:2px;background:var(--border);border-radius:8px;padding:3px;width:fit-content;margin-bottom:1.25rem;}
+.tab-btn{padding:7px 18px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;color:var(--muted);background:none;border:none;font-family:var(--font);transition:all .15s;}
+.tab-btn.active{background:#fff;color:var(--navy);}
+.panel{display:none;}.panel.active{display:block;}
+.kw-table th,.kw-table td{padding:9px 12px;}
+.badge{display:inline-block;font-size:9px;font-weight:600;padding:1px 6px;border-radius:10px;margin-left:5px;}
+.badge-blue{background:#dbeafe;color:#1e40af;}
+.badge-red{background:#fef2f2;color:var(--red);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Soligo Air <span class="nav-tag">Google Ads</span>
+  </div>
+  <div class="nav-right"><span class="live-dot"></span> 727-865-0950</div>
+</nav>
+
+<div class="page">
+  <div class="top-bar">
+    <div>
+      <div class="page-title">Google Ads Manager</div>
+      <div class="page-sub" id="page-sub">Google Ads · Search & Display · Last 30 days</div>
+    </div>
+    <div style="display:flex;gap:8px;">
+      <button class="btn btn-ghost" onclick="loadData()">↻ Refresh</button>
+      <button class="btn btn-google" onclick="window.open('https://ads.google.com','_blank')">Open Google Ads ↗</button>
+    </div>
+  </div>
+
+  <div class="error-box" id="error-box"></div>
+  <div class="sync-bar" id="sync-bar">
+    <span>✓</span><span id="sync-text">Data synced from Google Ads</span>
+  </div>
+  <div class="insight-bar" id="insight-bar"></div>
+
+  <!-- METRICS -->
+  <div class="metrics">
+    <div class="mc"><div class="mc-label">Total Spend</div><div class="mc-val" id="m-spend">—</div><div class="mc-sub">last 30 days</div></div>
+    <div class="mc"><div class="mc-label">Avg CPC</div><div class="mc-val" id="m-cpc">—</div><div class="mc-sub">cost per click</div></div>
+    <div class="mc"><div class="mc-label">Clicks</div><div class="mc-val" id="m-clicks">—</div><div class="mc-sub">total</div></div>
+    <div class="mc"><div class="mc-label">Impressions</div><div class="mc-val" id="m-imp">—</div><div class="mc-sub">total</div></div>
+    <div class="mc"><div class="mc-label">CTR</div><div class="mc-val" id="m-ctr">—</div><div class="mc-sub">click-through rate</div></div>
+    <div class="mc"><div class="mc-label">Conversions</div><div class="mc-val" id="m-conv">—</div><div class="mc-sub">total leads</div></div>
+    <div class="mc"><div class="mc-label">Cost/Conv.</div><div class="mc-val" id="m-cpa">—</div><div class="mc-sub">per lead</div></div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tab-btns">
+    <button class="tab-btn active" onclick="switchTab('campaigns')">Campaigns</button>
+    <button class="tab-btn" onclick="switchTab('adgroups')">Ad Groups</button>
+    <button class="tab-btn" onclick="switchTab('keywords')">Keywords</button>
+  </div>
+
+  <!-- CAMPAIGNS -->
+  <div class="panel active" id="panel-campaigns">
+    <div class="table-wrap">
+      <div class="table-head">
+        <div class="table-title">Campaigns</div>
+        <div class="table-sub" id="camp-updated"></div>
+      </div>
+      <div id="camp-area"><div class="empty"><div class="spinner"></div>Loading…</div></div>
+    </div>
+  </div>
+
+  <!-- AD GROUPS -->
+  <div class="panel" id="panel-adgroups">
+    <div class="table-wrap">
+      <div class="table-head"><div class="table-title">Ad Groups</div></div>
+      <div id="ag-area"><div class="empty">Select a campaign to view ad groups.</div></div>
+    </div>
+  </div>
+
+  <!-- KEYWORDS -->
+  <div class="panel" id="panel-keywords">
+    <div class="table-wrap">
+      <div class="table-head"><div class="table-title">Keywords</div></div>
+      <div id="kw-area"><div class="empty">Loading keywords…</div></div>
+    </div>
+  </div>
+
+  <!-- SETUP CARD (shown when no data) -->
+  <div class="setup-card" id="setup-card" style="display:none;">
+    <div class="setup-title">⚙️ Connect Google Ads — One-Time Setup</div>
+    <div class="setup-sub">Paste this script into Google Ads once. It runs hourly and pushes your data here automatically — no API keys, no OAuth.</div>
+    <div class="step-list">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-title">Open Google Ads Scripts</div>
+          <div class="step-desc">Go to <strong>ads.google.com</strong> → Tools & Settings → Bulk Actions → <strong>Scripts</strong> → click <strong>+</strong> to create a new script.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-title">Paste this script</div>
+          <div class="step-desc">Copy the entire script below and paste it into the editor. Click <strong>Authorize</strong> when prompted.</div>
+          <div class="code-block" id="script-block">
+<button class="copy-btn" onclick="copyScript()">Copy</button>
+function main() {
+  var ENDPOINT = 'https://soligoair.shop/.netlify/functions/google-ads-sync';
+  var SECRET   = 'soligo-gads-2026';
+  var DATE_RANGE = 'LAST_30_DAYS';
+
+  var campaigns = [];
+  var adgroups  = [];
+  var keywords  = [];
+
+  // Campaigns
+  var campIt = AdsApp.campaigns()
+    .withCondition('Status != REMOVED')
+    .withDateRange(DATE_RANGE)
+    .get();
+  while (campIt.hasNext()) {
+    var c = campIt.next();
+    var s = c.getStatsFor(DATE_RANGE);
+    campaigns.push({
+      id:          c.getId(),
+      name:        c.getName(),
+      status:      c.isEnabled() ? 'ACTIVE' : 'PAUSED',
+      type:        c.getAdvertisingChannelType(),
+      budget:      c.getBudget().getAmount(),
+      spend:       s.getCost(),
+      clicks:      s.getClicks(),
+      impressions: s.getImpressions(),
+      ctr:         s.getCtr(),
+      avgCpc:      s.getAverageCpc(),
+      conversions: s.getConversions(),
+      costPerConv: s.getCostPerConversion()
+    });
+  }
+
+  // Ad Groups
+  var agIt = AdsApp.adGroups()
+    .withCondition('Status != REMOVED')
+    .withDateRange(DATE_RANGE)
+    .get();
+  while (agIt.hasNext()) {
+    var ag = agIt.next();
+    var s = ag.getStatsFor(DATE_RANGE);
+    adgroups.push({
+      id:         ag.getId(),
+      name:       ag.getName(),
+      campaignId: ag.getCampaign().getId(),
+      campaign:   ag.getCampaign().getName(),
+      status:     ag.isEnabled() ? 'ACTIVE' : 'PAUSED',
+      spend:      s.getCost(),
+      clicks:     s.getClicks(),
+      ctr:        s.getCtr(),
+      avgCpc:     s.getAverageCpc(),
+      conversions:s.getConversions()
+    });
+  }
+
+  // Keywords
+  var kwIt = AdsApp.keywords()
+    .withCondition('Status != REMOVED')
+    .withDateRange(DATE_RANGE)
+    .orderBy('Clicks DESC')
+    .withLimit(100)
+    .get();
+  while (kwIt.hasNext()) {
+    var kw = kwIt.next();
+    var s = kw.getStatsFor(DATE_RANGE);
+    keywords.push({
+      text:        kw.getText(),
+      matchType:   kw.getMatchType(),
+      campaign:    kw.getCampaign().getName(),
+      adGroup:     kw.getAdGroup().getName(),
+      status:      kw.isEnabled() ? 'ACTIVE' : 'PAUSED',
+      spend:       s.getCost(),
+      clicks:      s.getClicks(),
+      impressions: s.getImpressions(),
+      ctr:         s.getCtr(),
+      avgCpc:      s.getAverageCpc(),
+      conversions: s.getConversions(),
+      qualityScore:kw.getQualityScore()
+    });
+  }
+
+  var payload = JSON.stringify({
+    campaigns:  campaigns,
+    adgroups:   adgroups,
+    keywords:   keywords,
+    accountId:  '727-865-0950',
+    dateRange:  DATE_RANGE
+  });
+
+  var options = {
+    method: 'post',
+    contentType: 'application/json',
+    headers: { 'X-Secret': SECRET },
+    payload: payload,
+    muteHttpExceptions: true
+  };
+
+  var resp = UrlFetchApp.fetch(ENDPOINT, options);
+  Logger.log('Sync status: ' + resp.getResponseCode());
+}
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-title">Set hourly schedule</div>
+          <div class="step-desc">After saving, click <strong>Run</strong> once to test it. Then click the clock icon → set frequency to <strong>Every hour</strong>. Done — your data will appear here automatically.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <div class="step-title">Come back here</div>
+          <div class="step-desc">Refresh this page after running the script. Your campaigns, ad groups, and keywords will appear within seconds.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+var gData = null;
+
+function fmtM(n){ return parseFloat(n||0)>0?'$'+parseFloat(n).toFixed(2):'—'; }
+function fmtK(n){ n=parseInt(n||0); return n>=1000?(n/1000).toFixed(1)+'k':(n>0?String(n):'—'); }
+function fmtPct(n){ return parseFloat(n||0)>0?(parseFloat(n)*100).toFixed(2)+'%':'—'; }
+function fmtQs(n){ return n>0?String(n)+'/10':'—'; }
+
+function switchTab(tab) {
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('.panel').forEach(function(p){ p.classList.remove('active'); });
+  event.target.classList.add('active');
+  document.getElementById('panel-'+tab).classList.add('active');
+}
+
+async function loadData() {
+  try {
+    var res = await fetch('/.netlify/functions/google-ads-sync');
+    var data = await res.json();
+
+    if (data.error) {
+      showSetup();
+      return;
+    }
+
+    gData = data;
+    showSetup(false);
+    renderMetrics();
+    renderCampaigns();
+    renderAdGroups();
+    renderKeywords();
+    renderInsights();
+
+    var syncBar = document.getElementById('sync-bar');
+    syncBar.classList.add('show');
+    document.getElementById('sync-text').textContent =
+      'Last synced: ' + new Date(data.lastSync).toLocaleString() + ' · ' + (data.campaigns||[]).length + ' campaigns loaded';
+
+    document.getElementById('camp-updated').textContent = 'Last 30 days';
+
+  } catch(e) {
+    showSetup();
+  }
+}
+
+function showSetup(show) {
+  show = show === undefined ? true : show;
+  document.getElementById('setup-card').style.display = show ? 'block' : 'none';
+}
+
+function renderMetrics() {
+  var camps = gData.campaigns || [];
+  var spend=0,clicks=0,imp=0,conv=0,cpcSum=0,cpcN=0,cpaSum=0,cpaN=0,ctrSum=0,ctrN=0;
+  camps.forEach(function(c){
+    spend += parseFloat(c.spend||0);
+    clicks += parseInt(c.clicks||0);
+    imp += parseInt(c.impressions||0);
+    conv += parseFloat(c.conversions||0);
+    if(c.avgCpc){ cpcSum+=parseFloat(c.avgCpc); cpcN++; }
+    if(c.costPerConv&&parseFloat(c.costPerConv)>0){ cpaSum+=parseFloat(c.costPerConv); cpaN++; }
+    if(c.ctr){ ctrSum+=parseFloat(c.ctr); ctrN++; }
+  });
+  document.getElementById('m-spend').textContent = spend>0?'$'+spend.toFixed(0):'—';
+  document.getElementById('m-cpc').textContent = cpcN>0?'$'+(cpcSum/cpcN).toFixed(2):'—';
+  document.getElementById('m-clicks').textContent = fmtK(clicks);
+  document.getElementById('m-imp').textContent = fmtK(imp);
+  document.getElementById('m-ctr').textContent = ctrN>0?(ctrSum/ctrN*100).toFixed(2)+'%':'—';
+  document.getElementById('m-conv').textContent = conv>0?conv.toFixed(0):'—';
+  document.getElementById('m-cpa').textContent = cpaN>0?'$'+(cpaSum/cpaN).toFixed(2):'—';
+}
+
+function renderCampaigns() {
+  var camps = (gData.campaigns||[]).slice().sort(function(a,b){ return parseFloat(b.spend||0)-parseFloat(a.spend||0); });
+  if(!camps.length){ document.getElementById('camp-area').innerHTML='<div class="empty">No campaigns found.</div>'; return; }
+  var rows = camps.map(function(c){
+    var pc = c.status==='ACTIVE'?'pill-active':'pill-paused';
+    return '<tr>'+
+      '<td><div class="camp-name">'+c.name+'</div><div class="camp-sub">'+(c.type||'')+'</div></td>'+
+      '<td><span class="pill '+pc+'">'+c.status.toLowerCase()+'</span></td>'+
+      '<td>'+(c.budget?'$'+parseFloat(c.budget).toFixed(0)+'/day':'—')+'</td>'+
+      '<td>'+fmtM(c.spend)+'</td>'+
+      '<td>'+fmtM(c.avgCpc)+'</td>'+
+      '<td>'+fmtK(c.clicks)+'</td>'+
+      '<td>'+fmtPct(c.ctr)+'</td>'+
+      '<td>'+(parseFloat(c.conversions||0)>0?parseFloat(c.conversions).toFixed(0):'—')+'</td>'+
+      '<td>'+fmtM(c.costPerConv)+'</td>'+
+    '</tr>';
+  }).join('');
+  document.getElementById('camp-area').innerHTML =
+    '<table><thead><tr><th>Campaign</th><th>Status</th><th>Budget</th><th>Spend</th><th>CPC</th><th>Clicks</th><th>CTR</th><th>Conv.</th><th>CPA</th></tr></thead><tbody>'+rows+'</tbody></table>';
+}
+
+function renderAdGroups() {
+  var ags = (gData.adgroups||[]).slice().sort(function(a,b){ return parseFloat(b.spend||0)-parseFloat(a.spend||0); });
+  if(!ags.length){ document.getElementById('ag-area').innerHTML='<div class="empty">No ad groups found.</div>'; return; }
+  var rows = ags.map(function(ag){
+    var pc = ag.status==='ACTIVE'?'pill-active':'pill-paused';
+    return '<tr>'+
+      '<td><div class="camp-name">'+ag.name+'</div><div class="camp-sub">'+ag.campaign+'</div></td>'+
+      '<td><span class="pill '+pc+'">'+ag.status.toLowerCase()+'</span></td>'+
+      '<td>'+fmtM(ag.spend)+'</td>'+
+      '<td>'+fmtM(ag.avgCpc)+'</td>'+
+      '<td>'+fmtK(ag.clicks)+'</td>'+
+      '<td>'+fmtPct(ag.ctr)+'</td>'+
+      '<td>'+(parseFloat(ag.conversions||0)>0?parseFloat(ag.conversions).toFixed(0):'—')+'</td>'+
+    '</tr>';
+  }).join('');
+  document.getElementById('ag-area').innerHTML =
+    '<table><thead><tr><th>Ad Group</th><th>Status</th><th>Spend</th><th>CPC</th><th>Clicks</th><th>CTR</th><th>Conv.</th></tr></thead><tbody>'+rows+'</tbody></table>';
+}
+
+function renderKeywords() {
+  var kws = gData.keywords || [];
+  if(!kws.length){ document.getElementById('kw-area').innerHTML='<div class="empty">No keywords found.</div>'; return; }
+  var rows = kws.map(function(kw){
+    var pc = kw.status==='ACTIVE'?'pill-active':'pill-paused';
+    var qs = parseInt(kw.qualityScore||0);
+    var qsBadge = qs>=7?'<span class="badge badge-blue">QS '+qs+'</span>':qs>0&&qs<5?'<span class="badge badge-red">QS '+qs+'</span>':'';
+    return '<tr>'+
+      '<td><div class="camp-name">'+kw.text+qsBadge+'</div><div class="camp-sub">'+kw.matchType+' · '+kw.adGroup+'</div></td>'+
+      '<td><span class="pill '+pc+'">'+kw.status.toLowerCase()+'</span></td>'+
+      '<td>'+fmtM(kw.avgCpc)+'</td>'+
+      '<td>'+fmtK(kw.clicks)+'</td>'+
+      '<td>'+fmtK(kw.impressions)+'</td>'+
+      '<td>'+fmtPct(kw.ctr)+'</td>'+
+      '<td>'+(parseFloat(kw.conversions||0)>0?parseFloat(kw.conversions).toFixed(0):'—')+'</td>'+
+    '</tr>';
+  }).join('');
+  document.getElementById('kw-area').innerHTML =
+    '<table class="kw-table"><thead><tr><th>Keyword</th><th>Status</th><th>CPC</th><th>Clicks</th><th>Impressions</th><th>CTR</th><th>Conv.</th></tr></thead><tbody>'+rows+'</tbody></table>';
+}
+
+function renderInsights() {
+  var camps = gData.campaigns || [];
+  var kws = gData.keywords || [];
+  var insights = [];
+
+  var bestCamp = camps.filter(function(c){ return parseFloat(c.clicks||0)>0; })
+    .sort(function(a,b){ return parseFloat(a.avgCpc||0)-parseFloat(b.avgCpc||0); })[0];
+  if(bestCamp) insights.push('💡 Best CPC campaign: <strong>"'+bestCamp.name+'"</strong> at $'+parseFloat(bestCamp.avgCpc).toFixed(2)+'/click.');
+
+  var bestKw = kws.filter(function(k){ return parseInt(k.clicks||0)>0; })
+    .sort(function(a,b){ return parseInt(b.clicks||0)-parseInt(a.clicks||0); })[0];
+  if(bestKw) insights.push('🔑 Top keyword: <strong>"'+bestKw.text+'"</strong> with '+bestKw.clicks+' clicks at $'+parseFloat(bestKw.avgCpc).toFixed(2)+'/click.');
+
+  var lowQs = kws.filter(function(k){ return parseInt(k.qualityScore||0)>0 && parseInt(k.qualityScore)<5 && parseInt(k.clicks||0)>0; });
+  if(lowQs.length) insights.push('⚠️ '+lowQs.length+' keyword(s) have low Quality Scores (under 5) — consider improving ad relevance or landing page.');
+
+  if(insights.length) {
+    var bar = document.getElementById('insight-bar');
+    bar.innerHTML = insights.join('<br>');
+    bar.classList.add('show');
+  }
+}
+
+function copyScript() {
+  var code = document.getElementById('script-block').innerText.replace('Copy','').trim();
+  navigator.clipboard.writeText(code).then(function(){
+    var btn = document.querySelector('.copy-btn');
+    btn.textContent = 'Copied!';
+    setTimeout(function(){ btn.textContent = 'Copy'; }, 2000);
+  });
+}
+
+loadData();
+</script>
+</body>
+</html>

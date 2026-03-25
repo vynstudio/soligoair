@@ -1,0 +1,663 @@
+<!-- v:2026032005 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="dns-prefetch" href="https://connect.facebook.net">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preload" href="/icon-color.png" as="image">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="robots" content="noindex">
+<title>Free AC Quote | Soligo Air</title>
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+function eid(){return Date.now().toString(36)+Math.random().toString(36).substr(2,9);}
+fbq('init','1231230569192614');fbq('track','PageView',{},{eventID:'pv_'+eid()});
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1LY1XJ26E"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-M1LY1XJ26E');gtag('config','AW-17179141807');</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:'Poppins',sans-serif;background:#001A42;min-height:100dvh;-webkit-font-smoothing:antialiased;}
+
+.hd{padding:22px 24px 10px;text-align:center;}
+.logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:6px;}
+.logo img{height:32px;}
+.logo-name{font-size:21px;font-weight:800;color:#fff;letter-spacing:-.3px;}
+.logo-name b{color:#F75600;}
+
+.prog-wrap{padding:0 24px;max-width:480px;margin:0 auto;}
+.prog-track{display:flex;gap:5px;margin-bottom:4px;}
+.prog-seg{flex:1;height:3px;background:rgba(255,255,255,.1);border-radius:3px;transition:background .4s;}
+.prog-seg.done{background:#F75600;}
+.prog-label{text-align:center;font-size:10px;font-weight:600;color:rgba(255,255,255,.3);letter-spacing:.5px;text-transform:uppercase;margin-bottom:10px;}
+
+.trust{display:flex;justify-content:center;gap:5px;padding:6px 16px 12px;flex-wrap:wrap;}
+.t{font-size:10px;font-weight:600;color:rgba(255,255,255,.55);display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:4px 9px;border-radius:20px;}
+
+.card{background:#fff;border-radius:24px 24px 0 0;padding:28px 20px 80px;min-height:calc(100dvh - 160px);}
+
+.screen{display:none;}
+.screen.active{display:block;animation:fadeUp .25s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── SERVICE GRID ── */
+.q-label{font-size:10px;font-weight:700;color:#F75600;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px;}
+.q-title{font-size:26px;font-weight:800;color:#001A42;line-height:1.15;margin-bottom:6px;}
+.q-sub{font-size:14px;color:#64748b;line-height:1.5;margin-bottom:22px;}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.svc-opt{background:#f8fafc;border:2px solid #e2e8f0;border-radius:18px;padding:22px 12px 18px;cursor:pointer;text-align:center;transition:all .18s;-webkit-tap-highlight-color:transparent;font-family:'Poppins',sans-serif;}
+.svc-opt:active{transform:scale(.96);}
+.svc-opt.sel{border-color:#F75600;background:#fff8f5;box-shadow:0 0 0 4px rgba(247,86,0,.1);}
+.svc-icon{display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.svc-name{font-size:14px;font-weight:700;color:#001A42;display:block;line-height:1.3;}
+.svc-desc{font-size:11px;color:#94a3b8;margin-top:4px;display:block;}
+
+/* ── FORM ── */
+.btn-back{display:inline-flex;align-items:center;gap:5px;background:none;border:none;color:#94a3b8;font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;cursor:pointer;padding:0;margin-bottom:16px;}
+
+.form-header{border-radius:16px 16px 0 0;padding:18px 20px;background:#002C6D;}
+.form-svc-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border-radius:20px;padding:4px 12px;font-size:11px;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:8px;}
+.form-htitle{color:#fff;font-size:18px;font-weight:800;margin-bottom:3px;line-height:1.2;}
+.form-hsub{color:rgba(255,255,255,.5);font-size:11px;display:flex;align-items:center;gap:5px;}
+.form-hsub::before{content:'';width:6px;height:6px;border-radius:50%;background:#22c55e;flex-shrink:0;}
+
+.form-body{background:#f8fafc;border:1.5px solid #e2e8f0;border-top:none;border-radius:0 0 16px 16px;padding:18px 18px 20px;margin-bottom:14px;}
+.trust-pills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;}
+.tp{font-size:11px;font-weight:600;padding:4px 10px;background:#EFF6FF;color:#002C6D;border-radius:20px;border:1px solid #dbeafe;}
+
+.field{margin-bottom:12px;}
+.field-label{font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px;display:block;}
+.field input{width:100%;padding:16px 16px;border:2px solid #e2e8f0;border-radius:12px;font-family:'Poppins',sans-serif;font-size:16px;color:#001A42;background:#fff;outline:none;-webkit-appearance:none;transition:all .18s;}
+.field input:focus{border-color:#002C6D;box-shadow:0 0 0 4px rgba(0,44,109,.07);}
+.field input::placeholder{color:#c4cdd8;font-size:15px;}
+.field input:-webkit-autofill,.field input:-webkit-autofill:focus{-webkit-box-shadow:0 0 0 1000px #fff inset;-webkit-text-fill-color:#001A42;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+
+/* REVIEW */
+.review-block{background:#fff;border:1.5px solid #e2e8f0;border-radius:12px;padding:13px 14px;margin-bottom:14px;}
+.review-stars{color:#f59e0b;font-size:14px;letter-spacing:1px;margin-bottom:5px;}
+.review-text{font-size:12px;color:#334155;line-height:1.55;font-style:italic;margin-bottom:6px;}
+.review-author{font-size:11px;font-weight:700;color:#64748b;}
+
+/* CTA */
+.btn-cta{width:100%;padding:20px;background:#F75600;color:#fff;border:none;border-radius:14px;font-family:'Poppins',sans-serif;font-size:18px;font-weight:800;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .1s,background .1s;box-shadow:0 6px 24px rgba(247,86,0,.35);margin-bottom:10px;}
+.btn-cta:active{transform:scale(.97);background:#d94e00;}
+.note{font-size:11px;color:#b0bec5;text-align:center;margin-bottom:16px;line-height:1.6;}
+
+/* QUICK SOLUTION */
+.qs{background:#001A42;border-radius:14px;overflow:hidden;margin-bottom:16px;}
+.qs-head{padding:12px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,.08);}
+.qs-head-icon{font-size:16px;}
+.qs-head-text{font-size:12px;font-weight:700;color:#fff;}
+.qs-body{padding:14px 16px;display:flex;flex-direction:column;gap:10px;}
+.qs-item{display:flex;align-items:flex-start;gap:10px;}
+.qs-check{width:18px;height:18px;border-radius:50%;background:#F75600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.qs-check::after{content:'✓';font-size:10px;color:#fff;font-weight:700;}
+.qs-text{font-size:12px;font-weight:600;color:#fff;line-height:1.4;}
+.qs-sub{font-size:11px;color:rgba(255,255,255,.45);margin-top:1px;}
+
+.or{display:flex;align-items:center;gap:10px;margin:4px 0 12px;}
+.or::before,.or::after{content:'';flex:1;height:1px;background:#e8edf5;}
+.or span{font-size:11px;color:#c4cdd8;white-space:nowrap;}
+.call-link{display:flex;align-items:center;justify-content:center;gap:9px;border:2px solid #e8edf5;border-radius:14px;padding:14px;color:#001A42;font-size:15px;font-weight:700;text-decoration:none;background:#f8fafc;}
+
+/* Hide desktop split panel on mobile */
+.d-left{display:none;}
+.d-right{display:none;}
+
+/* ── DESKTOP SPLIT PANEL (768px+) ── */
+@media(min-width:768px){
+  body{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:40px 20px;background:#f1f5f9;}
+
+  .d-left{display:flex;}
+  .d-right{display:flex;}
+
+  .hd{padding:0 0 20px;}
+  .logo-name{color:#001A42!important;}
+  .logo-name b{color:#F75600!important;}
+  .logo img{height:38px;}
+  .logo-name{font-size:26px;}
+  .hd-sub{color:#64748b!important;}
+
+  .prog-wrap{display:none;}
+  .trust{display:none;}
+
+  .card{
+    display:flex;flex-direction:row;
+    border-radius:20px;min-height:0;
+    padding:0;width:100%;max-width:960px;
+    box-shadow:0 8px 40px rgba(0,0,0,.12);
+    overflow:hidden;
+  }
+
+  /* LEFT PANEL — service selector */
+  .d-left{
+    width:380px;flex-shrink:0;
+    background:#ffffff;
+    border-right:1.5px solid #e2e8f0;
+    padding:36px 32px;
+    display:flex;flex-direction:column;
+  }
+  .d-left-title{font-size:22px;font-weight:800;color:#001A42;line-height:1.2;margin-bottom:6px;}
+  .d-left-sub{font-size:13px;color:#64748b;margin-bottom:28px;line-height:1.5;}
+  .d-svc-list{display:flex;flex-direction:column;gap:8px;flex:1;}
+  .d-svc-item{
+    display:flex;align-items:center;gap:14px;
+    background:#f8fafc;border:1.5px solid #e2e8f0;
+    border-radius:12px;padding:13px 16px;
+    cursor:pointer;transition:all .18s;
+    -webkit-tap-highlight-color:transparent;
+    font-family:'Poppins',sans-serif;text-align:left;
+  }
+  .d-svc-item:hover{background:#f0f6ff;border-color:#002C6D;}
+  .d-svc-item.sel{background:rgba(247,86,0,.15);border-color:#F75600;box-shadow:0 0 0 3px rgba(247,86,0,.12);}
+  .d-svc-item-icon{width:40px;height:40px;flex-shrink:0;}
+  .d-svc-item-text{}
+  .d-svc-item-name{font-size:14px;font-weight:700;color:#001A42;display:block;line-height:1.3;}
+  .d-svc-item-desc{font-size:11px;color:#94a3b8;margin-top:2px;display:block;}
+  .d-trust-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:24px;}
+  .d-tp{font-size:10px;font-weight:600;color:#002C6D;padding:3px 9px;border-radius:20px;border:1px solid #dbeafe;background:#EFF6FF;}
+
+  /* RIGHT PANEL — form */
+  .d-right{
+    flex:1;background:#fff;
+    padding:36px 40px;
+    display:flex;flex-direction:column;
+    overflow-y:auto;
+  }
+  .d-placeholder{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    flex:1;text-align:center;background:#f8fafc;border-radius:0 20px 20px 0;
+  }
+  @keyframes pointLeft{0%,100%{transform:translateX(0);}50%{transform:translateX(-8px);}}
+  .d-placeholder-icon{font-size:36px;margin-bottom:16px;animation:pointLeft 1.2s ease-in-out infinite;}
+  .d-placeholder-text{font-size:16px;font-weight:700;color:#001A42;margin-bottom:6px;}
+  .d-placeholder-sub{font-size:13px;color:#64748b;line-height:1.5;margin-bottom:16px;}
+  .d-placeholder-pill{background:rgba(247,86,0,.15);border:1px solid rgba(247,86,0,.3);color:#F75600;font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;}
+
+  /* Hide mobile screens on desktop */
+  .screen{display:none!important;}
+  .card > .ok{display:none;}
+
+  /* Desktop form panel */
+  .d-form-inner{display:flex;flex-direction:column;height:100%;}
+  .d-form-header{margin-bottom:22px;}
+  .d-form-pill{display:inline-flex;align-items:center;gap:6px;background:#EFF6FF;border:1px solid #dbeafe;border-radius:20px;padding:4px 12px;font-size:11px;font-weight:600;color:#002C6D;margin-bottom:10px;}
+  .d-form-title{font-size:22px;font-weight:800;color:#001A42;line-height:1.2;margin-bottom:4px;}
+  .d-form-sub{font-size:13px;color:#64748b;display:flex;align-items:center;gap:6px;}
+  .d-form-sub::before{content:'';width:7px;height:7px;border-radius:50%;background:#22c55e;flex-shrink:0;}
+  .d-field{margin-bottom:14px;}
+  .d-field-label{font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;display:block;}
+  .d-field input{width:100%;padding:15px 16px;border:2px solid #e2e8f0;border-radius:12px;font-family:'Poppins',sans-serif;font-size:15px;color:#001A42;background:#fff;outline:none;-webkit-appearance:none;transition:all .18s;}
+  .d-field input:focus{border-color:#002C6D;box-shadow:0 0 0 4px rgba(0,44,109,.07);}
+  .d-field input::placeholder{color:#c4cdd8;}
+  .d-field input:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px #fff inset;-webkit-text-fill-color:#001A42;}
+  .d-field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .d-btn{width:100%;padding:18px;background:#F75600;color:#fff;border:none;border-radius:14px;font-family:'Poppins',sans-serif;font-size:17px;font-weight:800;cursor:pointer;transition:transform .1s,background .1s;box-shadow:0 6px 20px rgba(247,86,0,.3);margin-bottom:10px;margin-top:4px;}
+  .d-btn:hover{background:#e04d00;}
+  .d-btn:active{transform:scale(.98);}
+  .d-note{font-size:11px;color:#b0bec5;text-align:center;margin-bottom:18px;}
+  .d-qs{background:#001A42;border-radius:12px;overflow:hidden;margin-bottom:14px;}
+  .d-qs-head{padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.08);font-size:12px;font-weight:700;color:#fff;display:flex;align-items:center;gap:7px;}
+  .d-qs-body{padding:12px 16px;display:flex;flex-direction:column;gap:9px;}
+  .d-qs-item{display:flex;align-items:flex-start;gap:9px;}
+  .d-qs-check{width:17px;height:17px;border-radius:50%;background:#F75600;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;}
+  .d-qs-check::after{content:'✓';font-size:9px;color:#fff;font-weight:700;}
+  .d-qs-text{font-size:12px;font-weight:600;color:#fff;line-height:1.4;}
+  .d-qs-sub{font-size:11px;color:rgba(255,255,255,.4);margin-top:1px;}
+  .d-review{background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:12px;padding:13px 14px;}
+  .d-review-stars{color:#f59e0b;font-size:13px;margin-bottom:5px;}
+  .d-review-text{font-size:12px;color:#334155;line-height:1.55;font-style:italic;margin-bottom:5px;}
+  .d-review-author{font-size:11px;font-weight:700;color:#64748b;}
+  .d-or{display:flex;align-items:center;gap:10px;margin:14px 0 12px;}
+  .d-or::before,.d-or::after{content:'';flex:1;height:1px;background:#e8edf5;}
+  .d-or span{font-size:11px;color:#c4cdd8;white-space:nowrap;}
+  .d-call{display:flex;align-items:center;justify-content:center;gap:9px;border:2px solid #e8edf5;border-radius:14px;padding:13px;color:#001A42;font-size:14px;font-weight:700;text-decoration:none;background:#f8fafc;}
+  .d-call:hover{border-color:#002C6D;}
+  .d-ok{display:none;flex-direction:column;align-items:center;justify-content:center;flex:1;text-align:center;padding:20px 0;}
+  .d-ok.show{display:flex;}
+  .d-ok-icon{font-size:64px;margin-bottom:14px;}
+  .d-ok-badge{display:inline-block;background:#DCFCE7;border:1.5px solid #86EFAC;border-radius:20px;padding:5px 16px;font-size:11px;font-weight:700;color:#166534;margin-bottom:14px;}
+  .d-ok-title{font-size:24px;font-weight:800;color:#001A42;margin-bottom:10px;}
+  .d-ok-sub{font-size:14px;color:#64748b;line-height:1.65;margin-bottom:24px;}
+  .d-ok-call{display:flex;align-items:center;justify-content:center;gap:10px;background:#002C6D;color:#fff;padding:16px 32px;border-radius:14px;font-size:15px;font-weight:800;text-decoration:none;}
+}
+
+/* SUCCESS */
+.ok{display:none;text-align:center;padding:40px 0 0;}
+.ok-icon{font-size:68px;margin-bottom:14px;display:block;}
+.ok-badge{display:inline-block;background:#DCFCE7;border:1.5px solid #86EFAC;border-radius:20px;padding:5px 16px;font-size:11px;font-weight:700;color:#166534;margin-bottom:14px;letter-spacing:.3px;}
+.ok-title{font-size:25px;font-weight:800;color:#001A42;margin-bottom:10px;line-height:1.2;}
+.ok-sub{font-size:14px;color:#64748B;line-height:1.65;margin-bottom:28px;}
+.ok-call{display:flex;align-items:center;justify-content:center;gap:10px;background:#002C6D;color:#fff;padding:18px;border-radius:14px;font-size:16px;font-weight:800;text-decoration:none;}
+</style>
+</head>
+<body>
+
+<div class="hd">
+  <div class="logo">
+    <img src="/icon-color.png" alt="Soligo Air">
+    <span class="logo-name">Soligo <b>Air</b></span>
+  </div>
+</div>
+
+<div class="prog-wrap">
+  <div class="prog-track">
+    <div class="prog-seg done" id="p1"></div>
+    <div class="prog-seg" id="p2"></div>
+  </div>
+  <div class="prog-label" id="prog-label">Step 1 of 2 — Select your service</div>
+</div>
+
+<div class="trust">
+  <div class="t">⭐ 5.0 Rated</div>
+  <div class="t">🛡️ FL Licensed</div>
+  <div class="t">⚡ Same-Day Service</div>
+  <div class="t">💳 0% Financing</div>
+</div>
+
+<div class="card">
+
+  <!-- ── DESKTOP SPLIT PANEL ── -->
+  <div class="d-left" id="d-left">
+    <div class="d-left-title">Get same-day<br>AC service</div>
+    <div class="d-left-sub">Select your service — your quote form updates instantly.</div>
+    <div class="d-svc-list">
+      <button class="d-svc-item" onclick="dPickService(this,'repair','AC Repair')">
+        <svg class="d-svc-item-icon" viewBox="0 0 52 52" fill="none"><rect width="52" height="52" rx="13" fill="#fff5f1"/><rect x="9" y="18" width="34" height="18" rx="3" stroke="#F75600" stroke-width="2"/><line x1="9" y1="24" x2="43" y2="24" stroke="#F75600" stroke-width="1.5"/><circle cx="26" cy="31" r="3" fill="#F75600"/><path d="M20 31h-4M36 31h-4" stroke="#F75600" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="d-svc-item-text"><span class="d-svc-item-name">AC Repair</span><span class="d-svc-item-desc">Fix a problem fast</span></div>
+      </button>
+      <button class="d-svc-item" onclick="dPickService(this,'replace','AC Replacement')">
+        <svg class="d-svc-item-icon" viewBox="0 0 52 52" fill="none"><rect width="52" height="52" rx="13" fill="#EFF6FF"/><rect x="6" y="18" width="16" height="14" rx="2.5" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3 2"/><rect x="30" y="18" width="16" height="14" rx="2.5" stroke="#002C6D" stroke-width="2"/><line x1="30" y1="23" x2="46" y2="23" stroke="#002C6D" stroke-width="1.5"/><circle cx="38" cy="28" r="2" fill="#002C6D"/><path d="M23 25h6M26 22l3 3-3 3" stroke="#F75600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="d-svc-item-text"><span class="d-svc-item-name">AC Replacement</span><span class="d-svc-item-desc">New system installed</span></div>
+      </button>
+      <button class="d-svc-item" onclick="dPickService(this,'install','New Installation')">
+        <svg class="d-svc-item-icon" viewBox="0 0 52 52" fill="none"><rect width="52" height="52" rx="13" fill="#f0fdf4"/><rect x="9" y="20" width="34" height="16" rx="3" stroke="#16a34a" stroke-width="2"/><line x1="9" y1="26" x2="43" y2="26" stroke="#16a34a" stroke-width="1.5"/><circle cx="26" cy="32" r="2.5" fill="#16a34a"/><path d="M26 13v5M22 14.5l2.5 3.5M30 14.5l-2.5 3.5" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="d-svc-item-text"><span class="d-svc-item-name">New Installation</span><span class="d-svc-item-desc">First-time AC setup</span></div>
+      </button>
+      <button class="d-svc-item" onclick="dPickService(this,'tune','Tune-Up')">
+        <svg class="d-svc-item-icon" viewBox="0 0 52 52" fill="none"><rect width="52" height="52" rx="13" fill="#EFF6FF"/><circle cx="26" cy="27" r="12" stroke="#002C6D" stroke-width="2"/><path d="M26 19v8l5 4" stroke="#002C6D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M26 15v1.5M26 37.5v1.5M14.5 27H16M36 27h1.5" stroke="#F75600" stroke-width="1.5" stroke-linecap="round"/><circle cx="26" cy="27" r="1.5" fill="#F75600"/></svg>
+        <div class="d-svc-item-text"><span class="d-svc-item-name">Tune-Up</span><span class="d-svc-item-desc">Preventive maintenance</span></div>
+      </button>
+      <button class="d-svc-item" onclick="dPickService(this,'iaq','Indoor Air Quality')">
+        <svg class="d-svc-item-icon" viewBox="0 0 52 52" fill="none"><rect width="52" height="52" rx="13" fill="#f0fdf4"/><path d="M14 30c0-6.6 5.4-12 12-12s12 5.4 12 12" stroke="#16a34a" stroke-width="2" stroke-linecap="round"/><path d="M17 34c0-5 4-9 9-9s9 4 9 9" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round" opacity=".5"/><circle cx="26" cy="34" r="3" fill="#16a34a"/><circle cx="26" cy="34" r="1.2" fill="#fff"/></svg>
+        <div class="d-svc-item-text"><span class="d-svc-item-name">Air Quality</span><span class="d-svc-item-desc">Purifiers & humidity</span></div>
+      </button>
+      <button class="d-svc-item" onclick="dPickService(this,'membership','Air Care+')">
+        <svg class="d-svc-item-icon" viewBox="0 0 52 52" fill="none"><rect width="52" height="52" rx="13" fill="#EFF6FF"/><rect x="9" y="20" width="34" height="16" rx="3" stroke="#002C6D" stroke-width="2"/><line x1="9" y1="26" x2="43" y2="26" stroke="#002C6D" stroke-width="1.5"/><path d="M14 31h8M14 23h5" stroke="#002C6D" stroke-width="1.5" stroke-linecap="round"/><circle cx="36" cy="31" r="4" fill="#F75600"/><path d="M34 31l1.5 1.5L38 29" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="d-svc-item-text"><span class="d-svc-item-name">Air Care+</span><span class="d-svc-item-desc">$29/mo membership</span></div>
+      </button>
+    </div>
+    <div class="d-trust-row">
+      <span class="d-tp">⭐ 5.0 Rated</span>
+      <span class="d-tp">🛡️ FL Licensed</span>
+      <span class="d-tp">💳 0% Financing</span>
+      <span class="d-tp">⚡ Same-Day</span>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="d-right" id="d-right">
+    <!-- Placeholder before selection -->
+    <div class="d-placeholder" id="d-placeholder">
+      <div class="d-placeholder-icon">👈</div>
+      <div class="d-placeholder-text">Select a service to get started</div>
+      <div class="d-placeholder-sub">Your quote form appears instantly.<br>Takes 30 seconds.</div>
+      <div class="d-placeholder-pill">No commitment · Free quote</div>
+    </div>
+    <!-- Form (hidden until service selected) -->
+    <div class="d-form-inner" id="d-form-inner" style="display:none;">
+      <div class="d-form-header">
+        <div class="d-form-pill" id="d-form-pill">🔧 AC Repair</div>
+        <div class="d-form-title" id="d-form-title">AC Repair — We Come Today</div>
+        <div class="d-form-sub">Get same-day service — we confirm your appointment fast</div>
+      </div>
+      <div class="d-field"><label class="d-field-label">Your name</label><input type="text" id="d-name" placeholder="First name" autocomplete="given-name" autocorrect="off" autocapitalize="words"></div>
+      <div class="d-field"><label class="d-field-label">Phone number</label><input type="tel" id="d-phone" placeholder="(321) 555-0000" inputmode="tel" autocomplete="tel"></div>
+      <div class="d-field-row">
+        <div class="d-field"><label class="d-field-label">Zip code</label><input type="text" id="d-zip" placeholder="32801" inputmode="numeric" maxlength="5" autocomplete="postal-code"></div>
+        <div class="d-field"><label class="d-field-label">Email (optional)</label><input type="email" id="d-email" placeholder="you@email.com" autocomplete="email"></div>
+      </div>
+      <button class="d-btn" id="d-btn" onclick="dSubmit()">Get Same-Day Service →</button>
+      <p class="d-note">No commitment · No spam · Free quote</p>
+      <div class="d-qs" id="d-qs">
+        <div class="d-qs-head">⚡ <span id="d-qs-title">What you get</span></div>
+        <div class="d-qs-body" id="d-qs-body"></div>
+      </div>
+      <div class="d-review" id="d-review">
+        <div class="d-review-stars">★★★★★</div>
+        <div class="d-review-text" id="d-review-text"></div>
+        <div class="d-review-author" id="d-review-author"></div>
+      </div>
+      <div class="d-or"><span>or call directly</span></div>
+      <a href="tel:3213847868" class="d-call" onclick="fbq('track','Contact',{content_name:'funnel_call_desktop'});gtagConversionCall()">📞 (321) 384-7868</a>
+    </div>
+    <!-- Desktop success -->
+    <div class="d-ok" id="d-ok">
+      <div class="d-ok-icon">✅</div>
+      <div class="d-ok-badge">REQUEST RECEIVED</div>
+      <div class="d-ok-title" id="d-ok-title">You're all set!</div>
+      <div class="d-ok-sub" id="d-ok-sub">A Soligo Air specialist will call you same day to confirm.</div>
+      <a href="tel:3213847868" class="d-ok-call" onclick="gtagConversionCall()">📞 Can't wait? Call (321) 384-7868</a>
+    </div>
+  </div>
+  <div class="screen active" id="sc-service">
+    <div class="q-label">What's going on?</div>
+    <div class="q-title">What do you need<br>help with today?</div>
+    <div class="q-sub">Tap one to get started.</div>
+    <div class="svc-grid">
+      <button class="svc-opt" onclick="pickService(this,'repair','AC Repair')">
+        <div class="svc-icon"><svg width="64" height="64" viewBox="0 0 52 52" fill="none"><rect width="52" height="52" rx="13" fill="#fff5f1"/><rect x="9" y="18" width="34" height="18" rx="3" stroke="#F75600" stroke-width="2"/><line x1="9" y1="24" x2="43" y2="24" stroke="#F75600" stroke-width="1.5"/><circle cx="26" cy="31" r="3" fill="#F75600"/><path d="M20 31h-4M36 31h-4" stroke="#F75600" stroke-width="1.5" stroke-linecap="round"/><path d="M32 21h5M15 21h5" stroke="#F75600" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <span class="svc-name">AC Repair</span><span class="svc-desc">Fix a problem</span>
+      </button>
+      <button class="svc-opt" onclick="pickService(this,'replace','AC Replacement')">
+        <div class="svc-icon"><svg width="64" height="64" viewBox="0 0 52 52" fill="none"><rect width="52" height="52" rx="13" fill="#EFF6FF"/><rect x="6" y="18" width="16" height="14" rx="2.5" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3 2"/><rect x="30" y="18" width="16" height="14" rx="2.5" stroke="#002C6D" stroke-width="2"/><line x1="30" y1="23" x2="46" y2="23" stroke="#002C6D" stroke-width="1.5"/><circle cx="38" cy="28" r="2" fill="#002C6D"/><path d="M23 25h6M26 22l3 3-3 3" stroke="#F75600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="svc-name">Replacement</span><span class="svc-desc">New system</span>
+      </button>
+      <button class="svc-opt" onclick="pickService(this,'install','New Installation')">
+        <div class="svc-icon"><svg width="64" height="64" viewBox="0 0 52 52" fill="none"><rect width="52" height="52" rx="13" fill="#f0fdf4"/><rect x="9" y="20" width="34" height="16" rx="3" stroke="#16a34a" stroke-width="2"/><line x1="9" y1="26" x2="43" y2="26" stroke="#16a34a" stroke-width="1.5"/><circle cx="26" cy="32" r="2.5" fill="#16a34a"/><path d="M26 13v5M22 14.5l2.5 3.5M30 14.5l-2.5 3.5" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round"/><path d="M20 32h-4M36 32h-4" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <span class="svc-name">Installation</span><span class="svc-desc">First-time AC</span>
+      </button>
+      <button class="svc-opt" onclick="pickService(this,'tune','Tune-Up')">
+        <div class="svc-icon"><svg width="64" height="64" viewBox="0 0 52 52" fill="none"><rect width="52" height="52" rx="13" fill="#EFF6FF"/><circle cx="26" cy="27" r="12" stroke="#002C6D" stroke-width="2"/><path d="M26 19v8l5 4" stroke="#002C6D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M26 15v1.5M26 37.5v1.5M14.5 27H16M36 27h1.5" stroke="#F75600" stroke-width="1.5" stroke-linecap="round"/><circle cx="26" cy="27" r="1.5" fill="#F75600"/></svg></div>
+        <span class="svc-name">Tune-Up</span><span class="svc-desc">Maintenance</span>
+      </button>
+      <button class="svc-opt" onclick="pickService(this,'iaq','Indoor Air Quality')">
+        <div class="svc-icon"><svg width="64" height="64" viewBox="0 0 52 52" fill="none"><rect width="52" height="52" rx="13" fill="#f0fdf4"/><path d="M14 30c0-6.6 5.4-12 12-12s12 5.4 12 12" stroke="#16a34a" stroke-width="2" stroke-linecap="round"/><path d="M17 34c0-5 4-9 9-9s9 4 9 9" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round" opacity=".5"/><path d="M10 34h6M36 34h6" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round"/><circle cx="26" cy="34" r="3" fill="#16a34a"/><circle cx="26" cy="34" r="1.2" fill="#fff"/></svg></div>
+        <span class="svc-name">Air Quality</span><span class="svc-desc">Purifiers</span>
+      </button>
+      <button class="svc-opt" onclick="pickService(this,'membership','Air Care+')">
+        <div class="svc-icon"><svg width="64" height="64" viewBox="0 0 52 52" fill="none"><rect width="52" height="52" rx="13" fill="#EFF6FF"/><rect x="9" y="20" width="34" height="16" rx="3" stroke="#002C6D" stroke-width="2"/><line x1="9" y1="26" x2="43" y2="26" stroke="#002C6D" stroke-width="1.5"/><path d="M14 31h8M14 23h5" stroke="#002C6D" stroke-width="1.5" stroke-linecap="round"/><circle cx="36" cy="31" r="4" fill="#F75600"/><path d="M34 31l1.5 1.5L38 29" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="svc-name">Air Care+</span><span class="svc-desc">$29/mo plan</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- STEP 2: FORM -->
+  <div class="screen" id="sc-form">
+    <button class="btn-back" onclick="goBack()">← Back</button>
+
+    <div class="form-header">
+      <div class="form-svc-pill" id="form-svc-pill">🔧 AC Repair</div>
+      <div class="form-htitle" id="form-htitle">AC Repair — We Come Today</div>
+      <div class="form-hsub">Get same-day service — we confirm your appointment fast</div>
+    </div>
+    <div class="form-body">
+      <div class="field">
+        <label class="field-label">Your name</label>
+        <input type="text" id="f-name" placeholder="First name" autocomplete="given-name" autocorrect="off" autocapitalize="words">
+      </div>
+      <div class="field">
+        <label class="field-label">Phone number</label>
+        <input type="tel" id="f-phone" placeholder="(321) 555-0000" inputmode="tel" autocomplete="tel">
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label class="field-label">Zip code</label>
+          <input type="text" id="f-zip" placeholder="32801" inputmode="numeric" maxlength="5" autocomplete="postal-code">
+        </div>
+        <div class="field">
+          <label class="field-label">Email (optional)</label>
+          <input type="email" id="f-email" placeholder="you@email.com" autocomplete="email">
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-cta" id="submit-btn" onclick="submitLead()">Get Same-Day Service →</button>
+    <p class="note">No commitment · No spam · Free quote</p>
+
+    <!-- QUICK SOLUTION -->
+    <div class="qs" id="qs-block">
+      <div class="qs-head">
+        <span class="qs-head-icon">⚡</span>
+        <div>
+          <div class="qs-head-text" id="qs-title">What happens next</div>
+        </div>
+      </div>
+      <div class="qs-body" id="qs-body"></div>
+    </div>
+
+    <!-- REVIEW -->
+    <div class="review-block" id="review-block">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text" id="review-text">"They came out same day and fixed my AC in 2 hours. Upfront pricing, no surprises. Highly recommend."</div>
+      <div class="review-author" id="review-author">— Maria R., Orlando</div>
+    </div>
+
+    <div class="or"><span>or call directly</span></div>
+    <a href="tel:3213847868" class="call-link" onclick="fbq('track','Contact',{content_name:'funnel_call'});gtagConversionCall()">📞 (321) 384-7868</a>
+  </div>
+
+  <!-- SUCCESS -->
+  <div class="ok" id="ok">
+    <span class="ok-icon">✅</span>
+    <div class="ok-badge">REQUEST RECEIVED</div>
+    <div class="ok-title" id="ok-title">You're all set!</div>
+    <div class="ok-sub" id="ok-sub">A Soligo Air specialist will call you same day.</div>
+    <a href="tel:3213847868" class="ok-call" onclick="gtagConversionCall()">📞 Can't wait? Call (321) 384-7868</a>
+  </div>
+
+</div>
+
+<script>
+var A = { service: '', serviceLabel: '' };
+
+var CONFIG = {
+  repair: {
+    pill: '🔧 AC Repair',
+    title: 'AC Repair — We Come Today',
+    btn: 'Get Same-Day Service →',
+    qs: [
+      { text: 'Same-day dispatch', sub: 'A tech heads to you within hours' },
+      { text: 'Upfront pricing', sub: 'You approve cost before we start' },
+      { text: 'All makes & models', sub: 'Carrier, Trane, Lennox, Goodman & more' },
+    ],
+    review: { text: '"They came out same day and fixed my AC in 2 hours. Upfront pricing, no surprises. Highly recommend."', author: '— Maria R., Orlando' }
+  },
+  replace: {
+    pill: '♻️ AC Replacement',
+    title: 'New AC — Same-Day Install Available',
+    btn: 'Get My Replacement Quote →',
+    qs: [
+      { text: 'Free in-home estimate', sub: 'We assess and recommend the right system' },
+      { text: '0% financing available', sub: 'Monthly payments that fit your budget' },
+      { text: 'Same-day installation', sub: 'Most replacements done in one visit' },
+    ],
+    review: { text: '"Replaced our 15-year-old unit in one day. They sized it right, cleaned up everything, and the financing made it easy."', author: '— James T., Winter Park' }
+  },
+  install: {
+    pill: '🏗️ New Installation',
+    title: 'New AC Install — Sized Right for Your Home',
+    btn: 'Get My Install Quote →',
+    qs: [
+      { text: 'Proper load calculation', sub: 'Sized correctly for your home layout' },
+      { text: 'Full installation included', sub: 'Ductwork, electrical, permits handled' },
+      { text: '0% financing options', sub: 'No money down for qualified homeowners' },
+    ],
+    review: { text: '"First time getting central AC. Soligo walked us through everything and had it installed in one day. Worth every penny."', author: '— Ana M., Kissimmee' }
+  },
+  tune: {
+    pill: '🔍 Tune-Up',
+    title: 'AC Tune-Up — Catch Problems Early',
+    btn: 'Book My Tune-Up →',
+    qs: [
+      { text: '21-point inspection', sub: 'Coils, refrigerant, filters, electrical' },
+      { text: 'Efficiency report included', sub: 'Know exactly how your system performs' },
+      { text: 'Air Care+ from $29/mo', sub: '2 tune-ups + priority service all year' },
+    ],
+    review: { text: '"Technician found a refrigerant issue before it became a $1,500 problem. The tune-up paid for itself instantly."', author: '— Robert K., Sanford' }
+  },
+  iaq: {
+    pill: '🌿 Air Quality',
+    title: 'Cleaner Air — Starting Today',
+    btn: 'Get My Air Quality Quote →',
+    qs: [
+      { text: 'Whole-home air purifiers', sub: 'Removes allergens, bacteria, and VOCs' },
+      { text: 'Humidity control systems', sub: 'Keeps indoor air at ideal 40–50%' },
+      { text: 'UV germicidal lights', sub: 'Kills mold and bacteria in your ducts' },
+    ],
+    review: { text: '"My allergies were terrible. After Soligo installed the purifier the difference was noticeable within days."', author: '— Sandra L., Lake Mary' }
+  },
+  membership: {
+    pill: '❄️ Air Care+',
+    title: 'Air Care+ — First Month Free',
+    btn: 'Claim My Free First Month →',
+    qs: [
+      { text: '2 tune-ups per year included', sub: '$198 value — free with membership' },
+      { text: 'Priority dispatch always', sub: 'Skip the line — members come first' },
+      { text: '15% off all repairs', sub: 'The plan pays for itself fast' },
+    ],
+    review: { text: '"Best $29 I spend every month. Had a repair last summer — got same-day service and a discount. Zero stress."', author: '— Carlos V., Orlando' }
+  }
+};
+
+function pickService(el, svc, label) {
+  document.querySelectorAll('.svc-opt').forEach(function(b){ b.classList.remove('sel'); });
+  el.classList.add('sel');
+  A.service = svc;
+  A.serviceLabel = label;
+
+  var cfg = CONFIG[svc];
+
+  document.getElementById('form-svc-pill').textContent = cfg.pill;
+  document.getElementById('form-htitle').textContent = cfg.title;
+  document.getElementById('submit-btn').textContent = cfg.btn;
+
+  var qsBody = document.getElementById('qs-body');
+  qsBody.innerHTML = cfg.qs.map(function(q){
+    return '<div class="qs-item"><div class="qs-check"></div><div><div class="qs-text">'+q.text+'</div><div class="qs-sub">'+q.sub+'</div></div></div>';
+  }).join('');
+
+  document.getElementById('review-text').textContent = cfg.review.text;
+  document.getElementById('review-author').textContent = cfg.review.author;
+
+  document.getElementById('p1').className = 'prog-seg done';
+  document.getElementById('p2').className = 'prog-seg done';
+  document.getElementById('prog-label').textContent = 'Step 2 of 2 — Your details';
+
+  document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+  document.getElementById('sc-form').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(function(){ document.getElementById('f-name').focus(); }, 350);
+}
+
+function goBack() {
+  document.getElementById('p2').className = 'prog-seg';
+  document.getElementById('prog-label').textContent = 'Step 1 of 2 — Select your service';
+  document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+  document.getElementById('sc-service').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function submitLead() {
+  var name = document.getElementById('f-name').value.trim();
+  var phone = document.getElementById('f-phone').value.trim();
+  if (!name) { document.getElementById('f-name').focus(); return; }
+  if (!phone) { document.getElementById('f-phone').focus(); return; }
+
+  var id = 'lead_' + eid();
+  var svcMap = {repair:'AC Repair',replace:'AC Replacement',install:'New Installation',tune:'Tune-Up',iaq:'Indoor Air Quality',membership:'Air Care+ Membership'};
+
+  var data = {
+    firstName: name,
+    phone: phone,
+    email: document.getElementById('f-email').value.trim(),
+    zip_code: document.getElementById('f-zip').value.trim(),
+    service: svcMap[A.service] || A.serviceLabel,
+    source: 'funnel-v6',
+    source_url: location.href,
+    eventId: id,
+    fbp: (document.cookie.match(/_fbp=([^;]+)/) || [])[1] || '',
+    fbc: (document.cookie.match(/_fbc=([^;]+)/) || [])[1] || ''
+  };
+
+  fbq('track','Lead',{content_name:'funnel_'+A.service},{eventID:id});
+  gtagConversionLead();
+  if(typeof gtag!=='undefined') gtag('event','conversion',{'send_to':'AW-17179141807/SI3SCMmOyf8bEK_N0_8_','value':1.0,'currency':'USD'});
+  gtag('event','generate_lead',{event_category:'funnel',event_label:A.service});
+  try{fetch('/.netlify/functions/submit-lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).catch(function(){});}catch(x){}
+
+  document.getElementById('ok-title').textContent = A.service==='membership' ? 'Welcome to Air Care+, '+name+'!' : "You're all set, "+name+"!";
+  document.getElementById('ok-sub').textContent = A.service==='membership'
+    ? 'A specialist will call you shortly to set up your free first month.'
+    : 'A Soligo Air specialist will call you same day to confirm.';
+
+  document.querySelectorAll('.screen').forEach(function(s){s.style.display='none';});
+  document.getElementById('ok').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('p1').className='prog-seg done';
+  document.getElementById('p2').className='prog-seg done';
+}
+
+function eid(){return Date.now().toString(36)+Math.random().toString(36).substr(2,9);}
+
+// ── DESKTOP ──
+function dPickService(el, svc, label) {
+  document.querySelectorAll('.d-svc-item').forEach(function(b){ b.classList.remove('sel'); });
+  el.classList.add('sel');
+  A.service = svc;
+  A.serviceLabel = label;
+  var cfg = CONFIG[svc];
+  document.getElementById('d-form-pill').textContent = cfg.pill;
+  document.getElementById('d-form-title').textContent = cfg.title;
+  document.getElementById('d-btn').textContent = cfg.btn;
+  document.getElementById('d-qs-body').innerHTML = cfg.qs.map(function(q){
+    return '<div class="d-qs-item"><div class="d-qs-check"></div><div><div class="d-qs-text">'+q.text+'</div><div class="d-qs-sub">'+q.sub+'</div></div></div>';
+  }).join('');
+  document.getElementById('d-review-text').textContent = cfg.review.text;
+  document.getElementById('d-review-author').textContent = cfg.review.author;
+  document.getElementById('d-placeholder').style.display = 'none';
+  document.getElementById('d-form-inner').style.display = 'flex';
+  document.getElementById('d-form-inner').style.flexDirection = 'column';
+  setTimeout(function(){ document.getElementById('d-name').focus(); }, 200);
+}
+
+function dSubmit() {
+  var name = document.getElementById('d-name').value.trim();
+  var phone = document.getElementById('d-phone').value.trim();
+  if (!name) { document.getElementById('d-name').focus(); return; }
+  if (!phone) { document.getElementById('d-phone').focus(); return; }
+  var id = 'lead_' + eid();
+  var svcMap = {repair:'AC Repair',replace:'AC Replacement',install:'New Installation',tune:'Tune-Up',iaq:'Indoor Air Quality',membership:'Air Care+ Membership'};
+  var data = {
+    firstName: name, phone: phone,
+    email: document.getElementById('d-email').value.trim(),
+    zip_code: document.getElementById('d-zip').value.trim(),
+    service: svcMap[A.service] || A.serviceLabel,
+    source: 'funnel-v6-desktop', source_url: location.href, eventId: id,
+    fbp: (document.cookie.match(/_fbp=([^;]+)/) || [])[1] || '',
+    fbc: (document.cookie.match(/_fbc=([^;]+)/) || [])[1] || ''
+  };
+  fbq('track','Lead',{content_name:'funnel_desktop_'+A.service},{eventID:id});
+  gtagConversionLead();
+  if(typeof gtag!=='undefined') gtag('event','conversion',{'send_to':'AW-17179141807/SI3SCMmOyf8bEK_N0_8_','value':1.0,'currency':'USD'});
+  gtag('event','generate_lead',{event_category:'funnel_desktop',event_label:A.service});
+  try{fetch('/.netlify/functions/submit-lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).catch(function(){});}catch(x){}
+  document.getElementById('d-ok-title').textContent = A.service==='membership' ? 'Welcome to Air Care+, '+name+'!' : "You're all set, "+name+"!";
+  document.getElementById('d-ok-sub').textContent = A.service==='membership'
+    ? 'A specialist will call you shortly to set up your free first month.'
+    : 'A Soligo Air specialist will confirm your appointment same day.';
+  document.getElementById('d-form-inner').style.display = 'none';
+  document.getElementById('d-ok').classList.add('show');
+}
+</script>
+<script>
+function gtagConversionCall(){
+  gtag('event','conversion',{'send_to':'AW-17179141807/sXjMCJ-N4YEcEK_N0_8_','value':1.0,'currency':'USD'});
+}
+function gtagLeadConversion(){
+  gtag('event','conversion',{'send_to':'AW-17179141807/SI3SCMmOyf8bEK_N0_8_','value':1.0,'currency':'USD'});
+}</script>
+
+function gtagConversionLead(){gtag('event','conversion',{'send_to':'AW-17179141807/SI3SCMmOyf8bEK_N0_8_','value':1.0,'currency':'USD'});}
+function gtagConversionCall(){gtag('event','conversion',{'send_to':'AW-17179141807/sXjMCJ-N4YEcEK_N0_8_','value':1.0,'currency':'USD'});}
+
+</body>
+</html>

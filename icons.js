@@ -1,0 +1,61 @@
+// Soligo Air — Style C SVG icon set
+// Usage: icons.repair, icons.replace, icons.install, icons.tune, icons.iaq, icons.membership
+window.SoligoIcons = {
+  repair: `<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="52" height="52" rx="13" fill="#fff5f1"/>
+    <rect x="9" y="18" width="34" height="18" rx="3" stroke="#F75600" stroke-width="2"/>
+    <line x1="9" y1="24" x2="43" y2="24" stroke="#F75600" stroke-width="1.5"/>
+    <circle cx="26" cy="31" r="3" fill="#F75600"/>
+    <path d="M20 31h-4M36 31h-4" stroke="#F75600" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M32 21h5" stroke="#F75600" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M15 21h5" stroke="#F75600" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M30 14l-2 4h4l-2-4z" fill="#F75600" opacity="0.5"/>
+  </svg>`,
+
+  replace: `<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="52" height="52" rx="13" fill="#EFF6FF"/>
+    <rect x="6" y="18" width="16" height="14" rx="2.5" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3 2"/>
+    <rect x="30" y="18" width="16" height="14" rx="2.5" stroke="#002C6D" stroke-width="2"/>
+    <line x1="30" y1="23" x2="46" y2="23" stroke="#002C6D" stroke-width="1.5"/>
+    <circle cx="38" cy="28" r="2" fill="#002C6D"/>
+    <path d="M23 25h6M26 22l3 3-3 3" stroke="#F75600" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`,
+
+  install: `<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="52" height="52" rx="13" fill="#f0fdf4"/>
+    <rect x="9" y="20" width="34" height="16" rx="3" stroke="#16a34a" stroke-width="2"/>
+    <line x1="9" y1="26" x2="43" y2="26" stroke="#16a34a" stroke-width="1.5"/>
+    <circle cx="26" cy="32" r="2.5" fill="#16a34a"/>
+    <path d="M26 13v5M22 14.5l2.5 3.5M30 14.5l-2.5 3.5" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M20 32h-4M36 32h-4" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>`,
+
+  tune: `<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="52" height="52" rx="13" fill="#EFF6FF"/>
+    <circle cx="26" cy="27" r="12" stroke="#002C6D" stroke-width="2"/>
+    <path d="M26 19v8l5 4" stroke="#002C6D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M26 15v1.5M26 37.5v1.5M14.5 27H16M36 27h1.5" stroke="#F75600" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="26" cy="27" r="1.5" fill="#F75600"/>
+  </svg>`,
+
+  iaq: `<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="52" height="52" rx="13" fill="#f0fdf4"/>
+    <path d="M14 30c0-6.6 5.4-12 12-12s12 5.4 12 12" stroke="#16a34a" stroke-width="2" stroke-linecap="round"/>
+    <path d="M17 34c0-5 4-9 9-9s9 4 9 9" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+    <path d="M10 34h6M36 34h6" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="26" cy="34" r="3" fill="#16a34a"/>
+    <circle cx="26" cy="34" r="1.2" fill="#fff"/>
+    <path d="M20 22c-2-1-3-3-2-5" stroke="#16a34a" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+    <path d="M32 22c2-1 3-3 2-5" stroke="#16a34a" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+  </svg>`,
+
+  membership: `<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="52" height="52" rx="13" fill="#EFF6FF"/>
+    <rect x="9" y="20" width="34" height="16" rx="3" stroke="#002C6D" stroke-width="2"/>
+    <line x1="9" y1="26" x2="43" y2="26" stroke="#002C6D" stroke-width="1.5"/>
+    <path d="M14 31h8M14 23h5" stroke="#002C6D" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="36" cy="31" r="4" fill="#F75600"/>
+    <path d="M34 31l1.5 1.5L38 29" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M24 14l1.5 3 3.5.5-2.5 2.5.5 3.5L24 22l-3 1.5.5-3.5L19 17.5l3.5-.5L24 14z" fill="#F75600" opacity="0.7"/>
+  </svg>`
+};

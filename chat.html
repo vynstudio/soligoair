@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Chat — Soligo Air AC Specialist</title>
+<link rel="icon" href="/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'Poppins',sans-serif;background:#FAFAFA;color:#0A1628;line-height:1.6;-webkit-font-smoothing:antialiased;}
+:root{--imperial-blue:#002C6D;--blue-bell:#0095D9;--blaze-orange:#F75600;--white:#FFFFFF;--bg-page:#FAFAFA;--bg-section:#FFFFFF;--bg-dark:#001A42;--text-primary:#0A1628;--text-body:#334155;--text-muted:#64748B;--border:#E2E8F0;--font:'Poppins',sans-serif;--max-w:1240px;}
+.container{max-width:var(--max-w);margin:0 auto;padding:0 24px;}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:9998;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-text{font-size:20px;font-weight:800;color:var(--imperial-blue);}
+.nav-logo-text span{color:var(--blaze-orange);}
+</style>
+<link rel="stylesheet" href="/styles.css">
+<link rel="canonical" href="https://soligoair.shop/chat.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://soligoair.shop/chat.html">
+<meta property="og:title" content="Chat — Soligo Air AC Specialist">
+<meta property="og:description" content="Chat with a Soligo Air AC specialist. Free diagnosis, anytime availability. Serving Orlando & Central Florida.">
+<meta property="og:image" content="https://soligoair.shop/og-image.jpg">
+<meta property="og:site_name" content="Soligo Air">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chat — Soligo Air AC Specialist">
+<meta name="twitter:description" content="Chat with a Soligo Air AC specialist. Free diagnosis available anytime.">
+<!-- Meta Pixel Code -->
+<script>
+requestIdleCallback(function(){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+function eid(){return Date.now().toString(36)+Math.random().toString(36).substr(2,9);}fbq('init', '1231230569192614');
+fbq('track', 'PageView', {}, {eventID: 'pv_'+eid()});
+});
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1231230569192614&ev=PageView&noscript=1"/ alt="Soligo Air"></noscript>
+<!-- End Meta Pixel Code -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1LY1XJ26E"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-M1LY1XJ26E');gtag('config','AW-17179141807');
+</script>
+<meta name="description" content="Chat with a Soligo Air AC specialist. Free diagnosis, anytime availability. Serving Orlando & Central Florida.">
+</head>
+<body>
+<button id="sa-chat-btn" style="display:none;"><span></span><span></span><span class="sa-dot" id="sa-dot"></span></button>
+<div id="sa-win" role="dialog" aria-label="Soligo Air Chat">
+<div class="sa-hd" style="text-align:center;padding:16px 14px;position:relative;">
+<button class="sa-xb" id="sa-close" aria-label="Close" style="position:absolute;right:10px;top:10px;">✕</button>
+<div style="display:flex;align-items:center;gap:8px;justify-content:center;">
+<img src="/icon-color.png" alt="Soligo Air" class="nav-icon-only"><span class="nav-logo-text">Soligo <span>Air</span></span>
+<div><span style="color:#fff;font-size:17px;font-weight:700;letter-spacing:1px;">Soligo</span> <span style="color:#F75600;font-size:17px;font-weight:700;letter-spacing:1px;">Air</span></div>
+</div>
+<div style="color:rgba(255,255,255,.4);font-size:11px;margin-top:5px;"><span style="display:inline-block;width:6px;height:6px;background:#22c55e;border-radius:50%;margin-right:4px;vertical-align:middle;"></span>HVAC Specialist · Central Florida</div>
+</div>
+<div class="sa-msgs" id="sa-msgs"></div>
+<div class="sa-qp" id="sa-qp"></div>
+<div class="sa-inp">
+<textarea id="sa-txt" placeholder="Ask about your AC…" rows="1" aria-label="Type your question" autocomplete="on" autocorrect="on" autocapitalize="sentences"></textarea>
+<button id="sa-snd" aria-label="Send">
+<svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+</button>
+</div>
+<div class="sa-pw">Powered by Soligo Air AI · Available anytime</div>
+<script>
+// Override close to go back
+document.getElementById('sa-close').addEventListener('click', function(e) {
+  e.stopPropagation();
+  e.preventDefault();
+  window.location.href = '/';
+});
+</script>
+<script>
+(function(){
+'use strict';
+var btn=document.getElementById('sa-chat-btn'),win=document.getElementById('sa-win'),xBtn=document.getElementById('sa-close'),msgs=document.getElementById('sa-msgs'),txt=document.getElementById('sa-txt'),snd=document.getElementById('sa-snd'),dot=document.getElementById('sa-dot'),qp=document.getElementById('sa-qp');
+if(!win)return;
+var isOpen=false,state={step:'idle',svc:'',q1:'',q2:'',name:'',phone:'',zip:'',freeText:false};
+var Q={'AC Repair':{q1:"What's going on with your AC?",c1:['Not cooling','Blowing warm air','Strange noises','Leaking water','Won\'t turn on','High electric bill'],q2:'How urgent is this?',c2:['Emergency \u2014 no AC','Today if possible','This week','Just getting quotes']},'AC Replacement':{q1:'Why considering replacement?',c1:['System is 10+ years old','Constant breakdowns','Bills too high','Want to upgrade','Tech said I need one'],q2:'Home size?',c2:['Under 1,500 sqft','1,500\u20132,000 sqft','2,000\u20132,500 sqft','2,500+ sqft']},'New Installation':{q1:'What kind of project?',c1:['New construction','Adding central AC','Adding a zone','Replacing window units'],q2:'Where in the process?',c2:['Just planning','Ready to go','Under construction','Need ASAP']},'Tune-Up':{q1:'Last AC service?',c1:['Never','Over 2 years ago','1\u20132 years ago','Under a year'],q2:'Anything concerning?',c2:['Just preventive','Less efficient','Making noise','Bill went up']},'Air Quality':{q1:'Main concern?',c1:['Allergies & dust','Mold / musty smell','Too humid','General wellness','Want assessment'],q2:'Who\'s most affected?',c2:['Kids / babies','Elderly','Pets','Everyone']},'Air Care+':{q1:'What interests you?',c1:['Priority service','Tune-ups included','Repair discounts','All of it'],q2:'How many AC systems?',c2:['1 system','2 systems','3+','Not sure']}};
+var faq={'pricing':["Our diagnostic fee starts at $89, waived if you proceed. Replacement quotes free. Air Care+ $29/month.","Would you like a free quote?"],'hours':["Monday\u2013Saturday, 7am\u20138pm. Emergency dispatchers available anytime.","Need to schedule?"],'financing':["Yes! 0% financing up to 60 months on installs and replacements.","Want a free estimate?"],'warranty':["1-year labor warranty on repairs. Full manufacturer warranty on new installs.","Anything else?"],'areas':["We serve Orlando, Winter Park, Kissimmee, Clermont, Lake Mary, Sanford, and all of Central Florida.","Need service?"],'air care':["$29/month: two tune-ups/year, priority scheduling, 15% off repairs. First month free. No contracts.","Want to start?"]};
+function addBot(t){var d=document.createElement('div');d.className='sa-m b';var b=document.createElement('div');b.className='sa-bbl';b.innerHTML=t;d.appendChild(b);msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;}
+function addUsr(t){var d=document.createElement('div');d.className='sa-m u';var b=document.createElement('div');b.className='sa-bbl';b.textContent=t;d.appendChild(b);msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;}
+function showChips(o,cb){qp.innerHTML='';o.forEach(function(opt){var c=document.createElement('button');c.className='sa-qb';c.textContent=opt;c.onclick=function(){addUsr(opt);qp.innerHTML='';cb(opt);};qp.appendChild(c);});}
+function enableInput(p){txt.disabled=false;txt.placeholder=p;txt.focus();}
+function disableInput(){txt.disabled=true;txt.placeholder='';}
+function detectIntent(t){t=t.toLowerCase();if(t.match(/pric|cost|how much|fee/))return'pricing';if(t.match(/hour|open|close|when|schedule/))return'hours';if(t.match(/financ|payment|0%/))return'financing';if(t.match(/warrant|guarantee/))return'warranty';if(t.match(/area|where|location|city|serve/))return'areas';if(t.match(/air care|membership|plan|subscribe/))return'air care';if(t.match(/repair|fix|broken|not cooling|warm/))return'svc_repair';if(t.match(/replac|new system|upgrade|old ac/))return'svc_replace';if(t.match(/tune|maintenance|check/))return'svc_tuneup';if(t.match(/air quality|allerg|dust|mold|humid/))return'svc_airquality';return null;}
+function startFlow(){msgs.innerHTML='';qp.innerHTML='';disableInput();state={step:'idle',svc:'',q1:'',q2:'',name:'',phone:'',zip:'',freeText:false};addBot("Hey! I'm your Soligo Air assistant.");setTimeout(function(){addBot("I can help you get a <strong>free quote</strong>, answer questions, or connect you with our team.");showChips(['\ud83d\udd27 AC Repair','\u267b\ufe0f AC Replacement','\ud83c\udfd7\ufe0f New Installation','\ud83d\udd0d Tune-Up','\ud83c\udf3f Air Quality','\u2744\ufe0f Air Care+','\u2753 I have a question'],function(c){if(c==='\u2753 I have a question'){state.freeText=true;state.step='freetext';setTimeout(function(){addBot("Sure! Ask me anything.");enableInput('Type your question...');},300);}else{var s=c.replace(/^\S+\s/,'');state.svc=s;state.step='q1';setTimeout(function(){addBot(Q[s].q1);showChips(Q[s].c1,handleQ1);},300);}});},500);}
+function handleQ1(a){state.q1=a;state.step='q2';setTimeout(function(){addBot(Q[state.svc].q2);showChips(Q[state.svc].c2,handleQ2);},300);}
+function handleQ2(a){state.q2=a;state.step='name';setTimeout(function(){addBot("Got it! Just need a few details.");setTimeout(function(){addBot("What's your <strong>name</strong>?");enableInput('Your name...');},300);},300);}
+function handleName(n){state.name=n;state.step='phone';setTimeout(function(){addBot("Nice to meet you, <strong>"+n+"</strong>! Best <strong>phone number</strong>?");enableInput('Phone number...');},300);}
+function handlePhone(p){state.phone=p;state.step='zip';setTimeout(function(){addBot("And your <strong>zip code</strong>?");enableInput('Zip code...');},300);}
+function handleZip(z){state.zip=z;state.step='done';disableInput();fetch('/.netlify/functions/submit-lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({firstName:state.name,phone:state.phone,zip_code:state.zip,service:state.svc,issue:state.q1+' | '+state.q2,message:'SOURCE: Chat Bot\nService: '+state.svc+'\nQ1: '+state.q1+'\nQ2: '+state.q2+'\nZip: '+state.zip,source:'chat-guided'})}).catch(function(){});if(typeof fbq!=='undefined')fbq('track','Lead',{},{eventID:'lead_'+Date.now().toString(36)+Math.random().toString(36).substr(2,9)});
+  gtagConversionLead();setTimeout(function(){addBot("\u2705 <strong>"+state.name+"</strong>, you're all set! A specialist will call <strong>"+state.phone+"</strong> shortly.");setTimeout(function(){addBot("Can't wait? Call: <strong>(321) 384-7868</strong>");setTimeout(function(){addBot("\ud83d\udca1 Code <strong style='color:#F75600;'>SOLIGO25</strong> = <strong>$25 off</strong>!");},300);},300);},400);}
+function handleFreeText(text){var intent=detectIntent(text);if(intent&&intent.startsWith('svc_')){var map={svc_repair:'AC Repair',svc_replace:'AC Replacement',svc_tuneup:'Tune-Up',svc_airquality:'Air Quality'};state.svc=map[intent];state.step='q1';state.freeText=false;setTimeout(function(){addBot("Sounds like you need <strong>"+state.svc+"</strong>.");setTimeout(function(){addBot(Q[state.svc].q1);showChips(Q[state.svc].c1,handleQ1);},300);},400);}else if(intent&&faq[intent]){setTimeout(function(){addBot(faq[intent][0]);setTimeout(function(){addBot(faq[intent][1]);showChips(['Yes, get a free quote','Another question','That helps, thanks'],function(c){if(c==='Yes, get a free quote'){state.freeText=false;state.step='name';setTimeout(function(){addBot("What's your <strong>name</strong>?");enableInput('Your name...');},300);}else if(c==='Another question'){setTimeout(function(){addBot("What else?");enableInput('Type your question...');},200);}else{addBot("Happy to help! Call <strong>(321) 384-7868</strong> anytime.");}});},300);},400);}else{setTimeout(function(){addBot("Let me connect you with our team.");showChips(['Get a free quote','Call (321) 384-7868','Ask something else'],function(c){if(c==='Get a free quote'){state.freeText=false;state.step='name';setTimeout(function(){addBot("What's your <strong>name</strong>?");enableInput('Your name...');},200);}else if(c==='Ask something else'){addBot("What would you like to know?");enableInput('Type your question...');}else{addBot("Call us: <strong>(321) 384-7868</strong>");}});},400);}}
+function handleInput(){var v=txt.value.trim();if(!v)return;addUsr(v);txt.value='';disableInput();if(state.step==='name')handleName(v);else if(state.step==='phone')handlePhone(v);else if(state.step==='zip')handleZip(v);else if(state.step==='freetext')handleFreeText(v);}
+snd.addEventListener('click',handleInput);txt.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();handleInput();}});
+function open(){isOpen=true;win.classList.add('open');dot.classList.remove('show');if(msgs.children.length===0)startFlow();}
+function close(){isOpen=false;win.classList.remove('open');}
+if(btn)btn.addEventListener('click',function(e){if(window.innerWidth<=768){e.preventDefault();window.location.href='/chat.html';return;}isOpen?close():open();});
+if(xBtn)xBtn.addEventListener('click',close);
+setTimeout(function(){win.classList.add('open');startFlow();},300);
+setTimeout(function(){if(!isOpen&&dot){dot.classList.add('show');if(btn)btn.style.animation='saBounce .5s ease';setTimeout(function(){if(btn)btn.style.animation='';},500);setInterval(function(){if(!isOpen&&btn){btn.style.animation='saBounce .5s ease';setTimeout(function(){btn.style.animation='';},500);}},20000);}},5000);
+})();
+
+</script>
+<script>
+function gtagConversionCall(){
+  gtag('event','conversion',{'send_to':'AW-17179141807/sXjMCJ-N4YEcEK_N0_8_','value':1.0,'currency':'USD'});
+}
+function gtagLeadConversion(){
+  gtag('event','conversion',{'send_to':'AW-17179141807/SI3SCMmOyf8bEK_N0_8_','value':1.0,'currency':'USD'});
+}</script>
+
+function gtagConversionLead(){gtag('event','conversion',{'send_to':'AW-17179141807/SI3SCMmOyf8bEK_N0_8_','value':1.0,'currency':'USD'});}
+function gtagConversionCall(){gtag('event','conversion',{'send_to':'AW-17179141807/sXjMCJ-N4YEcEK_N0_8_','value':1.0,'currency':'USD'});}
+
+</body>
+</html>
