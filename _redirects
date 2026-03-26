@@ -35,3 +35,18 @@
 /service-iaq            /service-iaq.html           200
 /aircare                /aircare.html               200
 /privacy-policy         /privacy-policy.html        200
+
+# AC repair city pages (matching existing organic traffic URLs)
+/ac-repair-sanford         /ac-repair-sanford.html         200
+/ac-repair-clermont        /ac-repair-clermont.html        200
+/ac-repair-kissimmee       /ac-repair-kissimmee.html       200
+/ac-repair-apopka          /ac-repair-apopka.html          200
+/ac-repair-winter-park     /ac-repair-winter-park.html     200
+/ac-repair-winter-garden   /ac-repair-winter-garden.html   200
+/ac-repair-st-cloud        /ac-repair-st-cloud.html        200
+
+# Content pages matching organic traffic URLs
+/ac-maintenance-checklist-florida   /ac-maintenance-checklist-florida.html   200
+/signs-need-new-ac-florida          /signs-need-new-ac-florida.html          200
+/why-ac-stops-working-florida       /why-ac-stops-working-florida.html       200
+/ac-repair-cost-orlando-2026        /ac-repair-cost-orlando-2026.html        200
