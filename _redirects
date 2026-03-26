@@ -1,0 +1,37 @@
+# Blog posts — clean URLs (higher priority than netlify.toml)
+/blog/emergency-ac-repair-orlando   /blog-emergency-ac-repair-orlando.html   200
+/blog/ac-repair-cost-orlando        /blog-ac-cost-orlando.html                200
+/blog/ac-not-cooling                /blog-ac-not-cooling.html                 200
+/blog/when-replace-ac-florida       /blog-when-replace-ac-florida.html        200
+/blog/best-ac-company-orlando       /blog-best-ac-company-orlando.html        200
+/blog/ac-troubleshooting            /blog-ac-troubleshooting.html             200
+/blog/repair-vs-replace             /blog-repair-vs-replace.html              200
+/blog/cut-ac-bill                   /blog-cut-ac-bill.html                    200
+/blog/maintenance-calendar          /blog-maintenance-calendar.html           200
+/blog                               /blog.html                                200
+
+# City pages
+/orlando                /orlando.html               200
+/kissimmee              /kissimmee.html             200
+/winter-park            /winter-park.html           200
+/apopka                 /apopka.html                200
+/sanford                /sanford.html               200
+/clermont               /clermont.html              200
+/lake-mary              /lake-mary.html             200
+/altamonte-springs      /altamonte-springs.html     200
+/st-cloud               /st-cloud.html              200
+/oviedo                 /oviedo.html                200
+/davenport              /davenport.html             200
+/ocoee                  /ocoee.html                 200
+/winter-garden          /winter-garden.html         200
+/celebration            /celebration.html           200
+/longwood               /longwood.html              200
+
+# Service pages
+/service-repair         /service-repair.html        200
+/service-replacement    /service-replacement.html   200
+/service-installation   /service-installation.html  200
+/service-tuneup         /service-tuneup.html        200
+/service-iaq            /service-iaq.html           200
+/aircare                /aircare.html               200
+/privacy-policy         /privacy-policy.html        200
