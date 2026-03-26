@@ -1,31 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://soligoair.shop/</loc><lastmod>2026-03-21</lastmod><priority>1.0</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://soligoair.shop/service-repair.html</loc><lastmod>2026-03-21</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/service-replacement.html</loc><lastmod>2026-03-21</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/service-installation.html</loc><lastmod>2026-03-21</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/service-tuneup.html</loc><lastmod>2026-03-21</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/service-iaq.html</loc><lastmod>2026-03-21</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/aircare.html</loc><lastmod>2026-03-21</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/orlando.html</loc><lastmod>2026-03-21</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/winter-park.html</loc><lastmod>2026-03-21</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/kissimmee.html</loc><lastmod>2026-03-21</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/clermont.html</loc><lastmod>2026-03-21</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/apopka.html</loc><lastmod>2026-03-21</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/lake-mary.html</loc><lastmod>2026-03-21</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/sanford.html</loc><lastmod>2026-03-21</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/altamonte-springs.html</loc><lastmod>2026-03-21</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/st-cloud.html</loc><lastmod>2026-03-21</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/oviedo.html</loc><lastmod>2026-03-21</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/davenport.html</loc><lastmod>2026-03-21</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/ocoee.html</loc><lastmod>2026-03-21</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/winter-garden.html</loc><lastmod>2026-03-21</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/celebration.html</loc><lastmod>2026-03-21</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/longwood.html</loc><lastmod>2026-03-21</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/blog.html</loc><lastmod>2026-03-21</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://soligoair.shop/blog-ac-troubleshooting.html</loc><lastmod>2026-03-21</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/blog-repair-vs-replace.html</loc><lastmod>2026-03-21</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/blog-cut-ac-bill.html</loc><lastmod>2026-03-21</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/blog-maintenance-calendar.html</loc><lastmod>2026-03-21</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://soligoair.shop/privacy-policy.html</loc><lastmod>2026-03-21</lastmod><priority>0.4</priority><changefreq>yearly</changefreq></url>
+  <!-- Homepage -->
+  <url><loc>https://soligoair.shop/</loc><lastmod>2026-03-25</lastmod><priority>1.0</priority><changefreq>weekly</changefreq></url>
+
+  <!-- Service Pages -->
+  <url><loc>https://soligoair.shop/service-repair</loc><lastmod>2026-03-25</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/service-replacement</loc><lastmod>2026-03-25</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/service-installation</loc><lastmod>2026-03-25</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/service-tuneup</loc><lastmod>2026-03-25</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/service-iaq</loc><lastmod>2026-03-25</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/aircare</loc><lastmod>2026-03-25</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+
+  <!-- City Pages -->
+  <url><loc>https://soligoair.shop/orlando</loc><lastmod>2026-03-25</lastmod><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/winter-park</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/kissimmee</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/sanford</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/apopka</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/clermont</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/lake-mary</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/altamonte-springs</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/st-cloud</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/oviedo</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/davenport</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/ocoee</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/winter-garden</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/celebration</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/longwood</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Blog Index -->
+  <url><loc>https://soligoair.shop/blog</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+  <!-- Blog Posts -->
+  <url><loc>https://soligoair.shop/blog/ac-troubleshooting</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/blog/repair-vs-replace</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/blog/cut-ac-bill</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/blog/maintenance-calendar</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/blog/ac-repair-cost-orlando</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/blog/best-ac-company-orlando</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/blog/ac-not-cooling</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/blog/when-replace-ac-florida</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://soligoair.shop/blog/emergency-ac-repair-orlando</loc><lastmod>2026-03-25</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Other -->
+  <url><loc>https://soligoair.shop/privacy-policy</loc><lastmod>2026-03-25</lastmod><priority>0.3</priority><changefreq>yearly</changefreq></url>
 </urlset>

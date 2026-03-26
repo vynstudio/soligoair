@@ -361,3 +361,183 @@
   for = "/*.woff"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Clean URL redirects — city pages
+[[redirects]]
+  from   = "/orlando"
+  to     = "/orlando.html"
+  status = 200
+
+[[redirects]]
+  from   = "/kissimmee"
+  to     = "/kissimmee.html"
+  status = 200
+
+[[redirects]]
+  from   = "/winter-park"
+  to     = "/winter-park.html"
+  status = 200
+
+[[redirects]]
+  from   = "/apopka"
+  to     = "/apopka.html"
+  status = 200
+
+[[redirects]]
+  from   = "/sanford"
+  to     = "/sanford.html"
+  status = 200
+
+[[redirects]]
+  from   = "/clermont"
+  to     = "/clermont.html"
+  status = 200
+
+[[redirects]]
+  from   = "/lake-mary"
+  to     = "/lake-mary.html"
+  status = 200
+
+[[redirects]]
+  from   = "/altamonte-springs"
+  to     = "/altamonte-springs.html"
+  status = 200
+
+[[redirects]]
+  from   = "/st-cloud"
+  to     = "/st-cloud.html"
+  status = 200
+
+[[redirects]]
+  from   = "/oviedo"
+  to     = "/oviedo.html"
+  status = 200
+
+[[redirects]]
+  from   = "/davenport"
+  to     = "/davenport.html"
+  status = 200
+
+[[redirects]]
+  from   = "/ocoee"
+  to     = "/ocoee.html"
+  status = 200
+
+[[redirects]]
+  from   = "/winter-garden"
+  to     = "/winter-garden.html"
+  status = 200
+
+[[redirects]]
+  from   = "/celebration"
+  to     = "/celebration.html"
+  status = 200
+
+[[redirects]]
+  from   = "/longwood"
+  to     = "/longwood.html"
+  status = 200
+
+# Clean URL redirects — blog
+[[redirects]]
+  from   = "/blog/ac-troubleshooting"
+  to     = "/blog-ac-troubleshooting.html"
+  status = 200
+
+[[redirects]]
+  from   = "/blog/cut-ac-bill"
+  to     = "/blog-cut-ac-bill.html"
+  status = 200
+
+[[redirects]]
+  from   = "/blog/maintenance-calendar"
+  to     = "/blog-maintenance-calendar.html"
+  status = 200
+
+[[redirects]]
+  from   = "/blog/repair-vs-replace"
+  to     = "/blog-repair-vs-replace.html"
+  status = 200
+
+# Clean URL redirects — services
+[[redirects]]
+  from   = "/service-repair"
+  to     = "/service-repair.html"
+  status = 200
+
+[[redirects]]
+  from   = "/service-replacement"
+  to     = "/service-replacement.html"
+  status = 200
+
+[[redirects]]
+  from   = "/service-installation"
+  to     = "/service-installation.html"
+  status = 200
+
+[[redirects]]
+  from   = "/service-tuneup"
+  to     = "/service-tuneup.html"
+  status = 200
+
+[[redirects]]
+  from   = "/service-iaq"
+  to     = "/service-iaq.html"
+  status = 200
+
+# New blog posts — clean URL redirects
+[[redirects]]
+  from   = "/blog/ac-repair-cost-orlando"
+  to     = "/blog-ac-cost-orlando.html"
+  status = 200
+
+[[redirects]]
+  from   = "/blog/best-ac-company-orlando"
+  to     = "/blog-best-ac-company-orlando.html"
+  status = 200
+
+[[redirects]]
+  from   = "/blog/ac-not-cooling"
+  to     = "/blog-ac-not-cooling.html"
+  status = 200
+
+[[redirects]]
+  from   = "/blog/when-replace-ac-florida"
+  to     = "/blog-when-replace-ac-florida.html"
+  status = 200
+
+[[redirects]]
+  from   = "/blog/emergency-ac-repair-orlando"
+  to     = "/blog-emergency-ac-repair-orlando.html"
+  status = 200
+
+# Fix existing blog redirects to use clean URLs
+[[redirects]]
+  from   = "/blog/ac-troubleshooting"
+  to     = "/blog-ac-troubleshooting.html"
+  status = 200
+
+[[redirects]]
+  from   = "/blog/repair-vs-replace"
+  to     = "/blog-repair-vs-replace.html"
+  status = 200
+
+[[redirects]]
+  from   = "/blog/cut-ac-bill"
+  to     = "/blog-cut-ac-bill.html"
+  status = 200
+
+[[redirects]]
+  from   = "/blog/maintenance-calendar"
+  to     = "/blog-maintenance-calendar.html"
+  status = 200
+
+[[redirects]]
+  from   = "/aircare"
+  to     = "/aircare.html"
+  status = 200
+
+[[redirects]]
+  from   = "/privacy-policy"
+  to     = "/privacy-policy.html"
+  status = 200
