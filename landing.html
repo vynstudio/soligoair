@@ -78,23 +78,23 @@ body {
   content: '';
   position: absolute; inset: 0;
   background:
-    linear-gradient(135deg, rgba(247,86,0,0.08) 0%, transparent 50%),
-    linear-gradient(225deg, rgba(0,149,217,0.06) 0%, transparent 50%);
+    linear-gradient(135deg, rgba(247,86,0,0.04) 0%, transparent 50%),
+    linear-gradient(225deg, rgba(0,149,217,0.03) 0%, transparent 50%);
 }
 .hero-grid-bg {
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
 }
-/* Orange diagonal slash accent */
+/* Subtle diagonal slash accent */
 .hero-slash {
   position: absolute; right: -10%; top: 0; bottom: 0;
   width: 55%; background: var(--navy);
   clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
-  opacity: 0.4;
+  opacity: 0.25;
 }
 
 .hero-inner {
@@ -107,15 +107,15 @@ body {
 /* Emergency badge */
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(247,86,0,0.15);
-  border: 1px solid rgba(247,86,0,0.4);
+  background: rgba(247,86,0,0.08);
+  border: 1px solid rgba(247,86,0,0.25);
   padding: 7px 16px; border-radius: 30px; width: fit-content;
   margin-bottom: 20px;
   animation: pulse-badge 2.5s infinite;
 }
 @keyframes pulse-badge {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(247,86,0,0.4); }
-  50% { box-shadow: 0 0 0 6px rgba(247,86,0,0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(247,86,0,0.2); }
+  50% { box-shadow: 0 0 0 5px rgba(247,86,0,0); }
 }
 .hero-badge-dot {
   width: 7px; height: 7px; border-radius: 50%;
@@ -166,10 +166,10 @@ body {
   font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 800;
   padding: 18px 36px; border-radius: 14px;
   text-decoration: none; border: none; cursor: pointer;
-  box-shadow: 0 8px 32px rgba(247,86,0,0.4);
+  box-shadow: 0 6px 24px rgba(247,86,0,0.25);
   transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
 }
-.btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(247,86,0,0.45); }
+.btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 10px 32px rgba(247,86,0,0.3); }
 .btn-primary:active { transform: scale(0.97); }
 .btn-secondary {
   display: inline-flex; align-items: center; gap: 8px;
@@ -197,7 +197,7 @@ body {
   font-size: 32px; font-weight: 900; color: var(--white);
   line-height: 1; letter-spacing: -1px; margin-bottom: 4px;
 }
-.stat-val span { color: var(--orange); }
+.stat-val span { color: rgba(247,86,0,0.8); }
 .stat-label {
   font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.35);
   text-transform: uppercase; letter-spacing: 1.5px;
@@ -205,16 +205,18 @@ body {
 
 /* ── URGENCY STRIP ── */
 .urgency-strip {
-  background: var(--orange);
+  background: #011535;
+  border-top: 1px solid rgba(247,86,0,0.2);
+  border-bottom: 1px solid rgba(0,0,0,0.3);
   padding: 14px 24px;
   text-align: center;
 }
 .urgency-strip p {
-  font-size: 14px; font-weight: 700; color: #fff;
+  font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.65);
   display: flex; align-items: center; justify-content: center;
   gap: 8px; flex-wrap: wrap;
 }
-.urgency-strip strong { color: var(--navy); }
+.urgency-strip strong { color: rgba(255,255,255,0.9); font-weight: 700; }
 
 /* ── SERVICES SECTION ── */
 .section { padding: 80px 24px; }
@@ -261,8 +263,8 @@ body {
   background: var(--orange); transform: scaleX(0);
   transform-origin: left; transition: transform 0.25s;
 }
-.service-card:hover { border-color: var(--orange); box-shadow: 0 8px 32px rgba(247,86,0,0.12); transform: translateY(-3px); }
-.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover { border-color: rgba(247,86,0,0.5); box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-3px); }
+.service-card:hover::before { transform: scaleX(1); opacity: 0.6; }
 .service-icon {
   width: 52px; height: 52px; border-radius: 14px;
   display: flex; align-items: center; justify-content: center;
@@ -297,7 +299,7 @@ body {
 }
 .trust-card-icon {
   width: 48px; height: 48px; border-radius: 14px;
-  background: rgba(247,86,0,0.15); border: 1px solid rgba(247,86,0,0.25);
+  background: rgba(247,86,0,0.08); border: 1px solid rgba(247,86,0,0.15);
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 18px;
 }
@@ -607,7 +609,7 @@ footer a:hover { color: var(--orange); }
         </div>
       </a>
 
-      <a href="/funnel?service=membership" class="service-card" style="border-color: var(--orange); background: #FFF8F5;">
+      <a href="/funnel?service=membership" class="service-card" style="border-color: rgba(247,86,0,0.3); background: #FFFAF8;">
         <div style="position:absolute;top:16px;right:16px;background:var(--orange);color:#fff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:1px;">POPULAR</div>
         <div class="service-icon" style="background:rgba(247,86,0,0.1);">
           <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#F75600" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
