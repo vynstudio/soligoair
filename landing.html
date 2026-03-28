@@ -1,0 +1,851 @@
+<!-- v:2026032601 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Central Florida's top-rated AC repair & replacement. Same-day service. Free diagnosis. Licensed & insured. Book online in 60 seconds.">
+<title>AC Repair & Replacement | Soligo Air | Central Florida</title>
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<!-- Tracking -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1LY1XJ26E"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-M1LY1XJ26E');gtag('config','AW-17179141807');</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1231230569192614');fbq('track','PageView');</script>
+<style>
+:root {
+  --navy: #002C6D;
+  --navy-dark: #001845;
+  --orange: #F75600;
+  --orange-dark: #D94D00;
+  --blue: #0095D9;
+  --white: #FFFFFF;
+  --off-white: #F4F7FF;
+  --silver: #B2B2B2;
+  --text: #0A1628;
+  --muted: #64748B;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── STICKY HEADER ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(0,28,73,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 14px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo img { height: 28px; }
+.nav-logo-text { font-size: 18px; font-weight: 800; color: #fff; letter-spacing: -.3px; }
+.nav-logo-text b { color: var(--orange); }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.nav-phone-link {
+  display: flex; align-items: center; gap: 7px;
+  color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 600;
+  text-decoration: none; padding: 8px 0;
+}
+.nav-cta {
+  background: var(--orange); color: #fff;
+  font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 700;
+  padding: 10px 20px; border-radius: 25px; text-decoration: none;
+  border: none; cursor: pointer;
+  white-space: nowrap;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: var(--navy-dark);
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 100px 24px 60px;
+  position: relative; overflow: hidden;
+}
+/* Geometric background pattern */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(135deg, rgba(247,86,0,0.08) 0%, transparent 50%),
+    linear-gradient(225deg, rgba(0,149,217,0.06) 0%, transparent 50%);
+}
+.hero-grid-bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+}
+/* Orange diagonal slash accent */
+.hero-slash {
+  position: absolute; right: -10%; top: 0; bottom: 0;
+  width: 55%; background: var(--navy);
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+  opacity: 0.4;
+}
+
+.hero-inner {
+  max-width: 1100px; margin: 0 auto; width: 100%;
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1fr;
+  gap: 48px;
+}
+
+/* Emergency badge */
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(247,86,0,0.15);
+  border: 1px solid rgba(247,86,0,0.4);
+  padding: 7px 16px; border-radius: 30px; width: fit-content;
+  margin-bottom: 20px;
+  animation: pulse-badge 2.5s infinite;
+}
+@keyframes pulse-badge {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(247,86,0,0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(247,86,0,0); }
+}
+.hero-badge-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--orange); flex-shrink: 0;
+}
+.hero-badge-text {
+  font-size: 11px; font-weight: 700; color: var(--orange);
+  letter-spacing: 2px; text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: clamp(40px, 8vw, 80px);
+  font-weight: 900; line-height: 0.95;
+  letter-spacing: -2px; color: var(--white);
+  margin-bottom: 20px;
+}
+.hero-title .line-orange { color: var(--orange); display: block; }
+.hero-title .line-blue { color: var(--blue); }
+
+.hero-subtitle {
+  font-size: 16px; color: rgba(255,255,255,0.55);
+  line-height: 1.7; max-width: 520px; margin-bottom: 36px;
+  font-weight: 400;
+}
+
+/* Trust row */
+.trust-row {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 36px;
+}
+.trust-pill {
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 7px 14px; border-radius: 30px;
+  font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.75);
+}
+.trust-pill svg { flex-shrink: 0; }
+
+/* Hero CTA group */
+.hero-ctas {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  align-items: center;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--orange); color: #fff;
+  font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 800;
+  padding: 18px 36px; border-radius: 14px;
+  text-decoration: none; border: none; cursor: pointer;
+  box-shadow: 0 8px 32px rgba(247,86,0,0.4);
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+}
+.btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(247,86,0,0.45); }
+.btn-primary:active { transform: scale(0.97); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: #fff;
+  font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 700;
+  padding: 18px 28px; border-radius: 14px;
+  text-decoration: none;
+  border: 2px solid rgba(255,255,255,0.2);
+  transition: border-color 0.15s, background 0.15s;
+}
+.btn-secondary:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+
+/* Stats bar */
+.stats-bar {
+  margin-top: 48px;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: rgba(255,255,255,0.08);
+  border-radius: 16px; overflow: hidden;
+}
+.stat {
+  background: rgba(255,255,255,0.04);
+  padding: 22px 20px; text-align: center;
+}
+.stat-val {
+  font-size: 32px; font-weight: 900; color: var(--white);
+  line-height: 1; letter-spacing: -1px; margin-bottom: 4px;
+}
+.stat-val span { color: var(--orange); }
+.stat-label {
+  font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.35);
+  text-transform: uppercase; letter-spacing: 1.5px;
+}
+
+/* ── URGENCY STRIP ── */
+.urgency-strip {
+  background: var(--orange);
+  padding: 14px 24px;
+  text-align: center;
+}
+.urgency-strip p {
+  font-size: 14px; font-weight: 700; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px; flex-wrap: wrap;
+}
+.urgency-strip strong { color: var(--navy); }
+
+/* ── SERVICES SECTION ── */
+.section { padding: 80px 24px; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+
+.section-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 3px;
+  color: var(--orange); text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex; align-items: center; gap: 10px;
+}
+.section-eyebrow::before {
+  content: ''; width: 28px; height: 2px; background: var(--orange);
+}
+.section-title {
+  font-size: clamp(30px, 4vw, 52px); font-weight: 900;
+  line-height: 1.05; letter-spacing: -1.5px;
+  color: var(--navy); margin-bottom: 12px;
+}
+.section-title span { color: var(--orange); }
+.section-lead {
+  font-size: 16px; color: var(--muted);
+  max-width: 540px; line-height: 1.75;
+  margin-bottom: 52px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.service-card {
+  background: var(--off-white);
+  border: 1.5px solid #E2E8F4;
+  border-radius: 20px; padding: 32px 28px;
+  text-decoration: none; color: inherit;
+  transition: all 0.2s;
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+}
+.service-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: var(--orange); transform: scaleX(0);
+  transform-origin: left; transition: transform 0.25s;
+}
+.service-card:hover { border-color: var(--orange); box-shadow: 0 8px 32px rgba(247,86,0,0.12); transform: translateY(-3px); }
+.service-card:hover::before { transform: scaleX(1); }
+.service-icon {
+  width: 52px; height: 52px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+}
+.service-name {
+  font-size: 19px; font-weight: 800; color: var(--navy);
+  margin-bottom: 8px;
+}
+.service-desc {
+  font-size: 14px; color: var(--muted); line-height: 1.65;
+  flex: 1; margin-bottom: 20px;
+}
+.service-cta {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 700; color: var(--orange);
+}
+.service-cta svg { transition: transform 0.2s; }
+.service-card:hover .service-cta svg { transform: translateX(4px); }
+
+/* ── TRUST SECTION ── */
+.trust-section { background: var(--navy); padding: 80px 24px; }
+.trust-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 2px; max-width: 1100px; margin: 0 auto;
+  background: rgba(255,255,255,0.06); border-radius: 20px;
+  overflow: hidden;
+}
+.trust-card {
+  background: rgba(255,255,255,0.03);
+  padding: 40px 36px;
+}
+.trust-card-icon {
+  width: 48px; height: 48px; border-radius: 14px;
+  background: rgba(247,86,0,0.15); border: 1px solid rgba(247,86,0,0.25);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+}
+.trust-card-title {
+  font-size: 20px; font-weight: 800; color: #fff;
+  margin-bottom: 8px;
+}
+.trust-card-desc {
+  font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.7;
+}
+
+/* ── PROCESS ── */
+.process-section { background: var(--off-white); padding: 80px 24px; }
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0; max-width: 1100px; margin: 0 auto;
+  counter-reset: steps;
+}
+.process-step {
+  padding: 36px 32px; position: relative;
+  border-right: 1px solid #E2E8F4;
+}
+.process-step:last-child { border-right: none; }
+.step-num {
+  font-size: 56px; font-weight: 900; line-height: 1;
+  color: rgba(0,44,109,0.07); letter-spacing: -3px;
+  margin-bottom: 12px;
+}
+.step-title { font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+.step-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
+.step-orange-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--orange); margin-bottom: 16px;
+}
+
+/* ── REVIEWS ── */
+.reviews-section { padding: 80px 24px; background: var(--white); }
+.reviews-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px; max-width: 1100px; margin: 0 auto;
+}
+.review-card {
+  background: var(--off-white); border: 1.5px solid #E2E8F4;
+  border-radius: 20px; padding: 28px 24px;
+}
+.review-stars { color: #F59E0B; font-size: 16px; letter-spacing: 2px; margin-bottom: 12px; }
+.review-text {
+  font-size: 14px; color: var(--text); line-height: 1.7;
+  font-style: italic; margin-bottom: 16px;
+}
+.review-author { display: flex; align-items: center; gap: 12px; }
+.review-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--navy); display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 800; color: var(--orange); flex-shrink: 0;
+}
+.review-name { font-size: 13px; font-weight: 700; color: var(--navy); }
+.review-meta { font-size: 11px; color: var(--muted); }
+.review-google {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 11px; font-weight: 600; color: var(--blue); margin-top: 2px;
+}
+
+/* ── SERVICE AREAS ── */
+.areas-section { background: var(--off-white); padding: 80px 24px; }
+.areas-grid {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  max-width: 1100px; margin: 0 auto;
+}
+.area-pill {
+  display: flex; align-items: center; gap: 6px;
+  padding: 10px 18px; border-radius: 30px;
+  background: var(--white); border: 1.5px solid #E2E8F4;
+  font-size: 13px; font-weight: 600; color: var(--navy);
+  text-decoration: none; transition: all 0.15s;
+}
+.area-pill:hover { border-color: var(--orange); color: var(--orange); }
+.area-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
+
+/* ── FINAL CTA ── */
+.final-cta {
+  background: var(--navy);
+  padding: 80px 24px;
+  text-align: center; position: relative; overflow: hidden;
+}
+.final-cta::before {
+  content: '';
+  position: absolute; width: 600px; height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(247,86,0,0.1), transparent 70%);
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+}
+.final-cta-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+.final-cta-title {
+  font-size: clamp(36px, 5vw, 64px); font-weight: 900;
+  color: var(--white); letter-spacing: -2px; line-height: 1;
+  margin-bottom: 16px;
+}
+.final-cta-title span { color: var(--orange); }
+.final-cta-sub {
+  font-size: 16px; color: rgba(255,255,255,0.45);
+  margin-bottom: 40px; line-height: 1.7;
+}
+.final-cta-btns { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+.final-cta-note { font-size: 12px; color: rgba(255,255,255,0.25); margin-top: 16px; }
+
+/* ── FOOTER ── */
+footer {
+  background: #02061A; padding: 32px 24px;
+  text-align: center; border-top: 1px solid rgba(255,255,255,0.06);
+}
+footer p { font-size: 12px; color: rgba(255,255,255,0.2); line-height: 1.8; }
+footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+footer a:hover { color: var(--orange); }
+
+/* ── MOBILE-FIRST RESPONSIVE ── */
+@media (min-width: 768px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .trust-grid { grid-template-columns: repeat(4, 1fr); }
+  .process-steps { grid-template-columns: repeat(4, 1fr); }
+  .final-cta-btns { flex-direction: row; justify-content: center; }
+  .nav-phone-link { display: flex; }
+}
+
+@media (max-width: 767px) {
+  .nav-phone-link { display: none; }
+  .trust-grid { grid-template-columns: 1fr 1fr; }
+  .process-step { border-right: none; border-bottom: 1px solid #E2E8F4; }
+  .process-step:last-child { border-bottom: none; }
+  .stats-bar { grid-template-columns: 1fr; }
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+.fade-up:nth-child(1) { animation-delay: 0.1s; }
+.fade-up:nth-child(2) { animation-delay: 0.2s; }
+.fade-up:nth-child(3) { animation-delay: 0.3s; }
+.fade-up:nth-child(4) { animation-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/icon-color.png" alt="Soligo Air">
+    <span class="nav-logo-text">Soligo <b>Air</b></span>
+  </a>
+  <div class="nav-right">
+    <a href="tel:4079999999" class="nav-phone-link">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      (407) 999-9999
+    </a>
+    <a href="/funnel" class="nav-cta">Get Free Quote</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-slash"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge fade-up">
+        <div class="hero-badge-dot"></div>
+        <span class="hero-badge-text">Same-Day Service Available</span>
+      </div>
+      <h1 class="hero-title fade-up">
+        Central Florida's<br>
+        <span class="line-orange">Most Trusted</span><br>
+        AC Company.
+      </h1>
+      <p class="hero-subtitle fade-up">
+        Repair, replace, or maintain your AC system — fast.
+        Licensed, insured, and 5-star rated across Orlando, Kissimmee,
+        Winter Park, Sanford, and 30+ cities.
+      </p>
+      <div class="trust-row fade-up">
+        <span class="trust-pill">
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#F59E0B"/></svg>
+          5.0 Google Rating
+        </span>
+        <span class="trust-pill">
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#22C55E" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          FL Licensed &amp; Insured
+        </span>
+        <span class="trust-pill">
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#0095D9" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          Same-Day Available
+        </span>
+        <span class="trust-pill">
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#0095D9" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+          0% Financing Available
+        </span>
+      </div>
+      <div class="hero-ctas fade-up">
+        <a href="/funnel" class="btn-primary" onclick="gtag('event','hero_cta_click',{event_category:'engagement'})">
+          Get My Free Quote
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+        <a href="tel:4079999999" class="btn-secondary">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Call Now
+        </a>
+      </div>
+      <div class="stats-bar fade-up">
+        <div class="stat">
+          <div class="stat-val"><span>5.0</span>★</div>
+          <div class="stat-label">Google Rating</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val">100<span>+</span></div>
+          <div class="stat-label">Customers Served</div>
+        </div>
+        <div class="stat">
+          <div class="stat-val"><span>30</span>+</div>
+          <div class="stat-label">Cities Covered</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── URGENCY STRIP ── -->
+<div class="urgency-strip">
+  <p>
+    <svg width="16" height="16" fill="#fff" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+    Florida summer is coming — <strong>book your AC tune-up now before slots fill up.</strong>
+    Limited same-day appointments available.
+    <a href="/funnel" style="color:#fff;font-weight:800;text-decoration:underline;margin-left:8px">Claim Your Spot →</a>
+  </p>
+</div>
+
+<!-- ── SERVICES ── -->
+<section class="section" style="background: var(--white);">
+  <div class="section-inner">
+    <div class="section-eyebrow">Our Services</div>
+    <h2 class="section-title">Everything your<br><span>AC needs.</span></h2>
+    <p class="section-lead">From emergency repair to full system replacement — we handle every HVAC job in Central Florida. All makes and models.</p>
+
+    <div class="services-grid">
+      <a href="/funnel?service=repair" class="service-card">
+        <div class="service-icon" style="background:#FFF5F0;">
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#F75600" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <div class="service-name">AC Repair</div>
+        <div class="service-desc">AC not cooling? Making noise? We diagnose and fix all AC problems the same day — all makes and models. Free diagnosis included.</div>
+        <div class="service-cta">
+          Get Free Diagnosis
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </div>
+      </a>
+
+      <a href="/funnel?service=replace" class="service-card">
+        <div class="service-icon" style="background:#EFF6FF;">
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#002C6D" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+        </div>
+        <div class="service-name">AC Replacement</div>
+        <div class="service-desc">Old system breaking down? We install all major brands with $0 down financing. Most replacements completed within 24 hours. 10-year warranty.</div>
+        <div class="service-cta">
+          View Financing Options
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </div>
+      </a>
+
+      <a href="/funnel?service=tune" class="service-card">
+        <div class="service-icon" style="background:#F0FDF4;">
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#16A34A" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div class="service-name">Tune-Up &amp; Maintenance</div>
+        <div class="service-desc">Keep your AC running at peak efficiency. Our 21-point inspection catches small issues before they become expensive emergencies. From $79.</div>
+        <div class="service-cta">
+          Book Tune-Up
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </div>
+      </a>
+
+      <a href="/funnel?service=install" class="service-card">
+        <div class="service-icon" style="background:#EFF6FF;">
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#0095D9" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        </div>
+        <div class="service-name">New Installation</div>
+        <div class="service-desc">Building a new home or adding a room? We handle complete new AC installations — system sizing, ductwork, and setup. Get it done right the first time.</div>
+        <div class="service-cta">
+          Get Installation Quote
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </div>
+      </a>
+
+      <a href="/funnel?service=iaq" class="service-card">
+        <div class="service-icon" style="background:#F0FDF4;">
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#16A34A" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+        </div>
+        <div class="service-name">Indoor Air Quality</div>
+        <div class="service-desc">Air purifiers, UV systems, dehumidifiers, and smart thermostats. Breathe cleaner air and reduce allergens throughout your home.</div>
+        <div class="service-cta">
+          Improve Air Quality
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </div>
+      </a>
+
+      <a href="/funnel?service=membership" class="service-card" style="border-color: var(--orange); background: #FFF8F5;">
+        <div style="position:absolute;top:16px;right:16px;background:var(--orange);color:#fff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:1px;">POPULAR</div>
+        <div class="service-icon" style="background:rgba(247,86,0,0.1);">
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#F75600" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        </div>
+        <div class="service-name">Air Care+ Membership</div>
+        <div class="service-desc">Just $29/month — includes 2 annual tune-ups, priority same-day service, 15% off all repairs, and no diagnostic fees. Saves most homeowners $300+ per year.</div>
+        <div class="service-cta" style="color:var(--orange)">
+          Join Air Care+
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY SOLIGO ── -->
+<section class="trust-section">
+  <div class="section-inner" style="max-width:1100px;margin:0 auto;">
+    <div class="section-eyebrow" style="color:var(--blue);margin-bottom:12px;">
+      <span style="display:inline-flex;align-items:center;gap:10px;">
+        <span style="display:block;width:28px;height:2px;background:var(--blue);"></span>
+        Why Homeowners Choose Us
+      </span>
+    </div>
+    <h2 class="section-title" style="color:#fff;margin-bottom:12px;">Not your average<br><span>HVAC company.</span></h2>
+    <p class="section-lead" style="color:rgba(255,255,255,0.4);margin-bottom:48px;">We do one thing: show up on time, fix it right, charge a fair price. No upsells, no surprises on the invoice.</p>
+
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="trust-card-icon">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#F75600" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <div class="trust-card-title">Same-Day Service</div>
+        <div class="trust-card-desc">When your AC breaks in Florida, waiting days isn't an option. We offer same-day appointments 7 days a week, including weekends and holidays.</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#F75600" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <div class="trust-card-title">Licensed &amp; Insured</div>
+        <div class="trust-card-desc">Florida-licensed HVAC contractor, fully insured. Every technician is background-checked, drug-tested, and trained on the latest systems.</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#F75600" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div class="trust-card-title">Upfront Pricing</div>
+        <div class="trust-card-desc">We give you the full price before we start — no surprises on the final invoice. The price we quote is the price you pay. Always.</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#F75600" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+        </div>
+        <div class="trust-card-title">0% Financing</div>
+        <div class="trust-card-desc">New system needed? Don't let cost stop you. We offer flexible financing — $0 down, 0% interest for 18 months on approved credit.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="process-section">
+  <div class="section-inner" style="max-width:1100px;margin:0 auto;">
+    <div class="section-eyebrow">The Process</div>
+    <h2 class="section-title">Book in 60 seconds.<br><span>Fixed the same day.</span></h2>
+    <p class="section-lead">We've stripped out every unnecessary step. From request to fix — it's that simple.</p>
+  </div>
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-num">01</div>
+      <div class="step-orange-dot"></div>
+      <div class="step-title">Pick your service</div>
+      <div class="step-desc">Select what you need from our quick online form — takes under 60 seconds. No account required.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">02</div>
+      <div class="step-orange-dot"></div>
+      <div class="step-title">Get your quote</div>
+      <div class="step-desc">We call or text within minutes with an upfront price. You'll know exactly what it costs before we arrive.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">03</div>
+      <div class="step-orange-dot"></div>
+      <div class="step-title">We show up ready</div>
+      <div class="step-desc">Your tech arrives on time with all tools and parts. No waiting for a part to be ordered — we come prepared.</div>
+    </div>
+    <div class="process-step">
+      <div class="step-num">04</div>
+      <div class="step-orange-dot"></div>
+      <div class="step-title">Back to cool</div>
+      <div class="step-desc">Job done, home cool. You pay the quoted price — nothing more. Most jobs completed in a single visit.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── REVIEWS ── -->
+<section class="reviews-section">
+  <div class="section-inner">
+    <div class="section-eyebrow">Real Reviews</div>
+    <h2 class="section-title">What Central Florida<br><span>customers say.</span></h2>
+    <p class="section-lead">100+ verified Google reviews. Here's what our customers actually wrote.</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"AC went out at 9pm on a Friday. Soligo was at my house by 11pm and had it fixed before midnight. I've never seen a company respond that fast. Will never use anyone else."</div>
+        <div class="review-author">
+          <div class="review-avatar">M</div>
+          <div>
+            <div class="review-name">Maria R.</div>
+            <div class="review-meta">Orlando, FL</div>
+            <div class="review-google">
+              <svg width="10" height="10" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              Verified Google Review
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Honest pricing — quoted $340 and that's exactly what I paid. No upsell attempts, no 'while I'm here' charges. Technician explained everything and left the place cleaner than he found it."</div>
+        <div class="review-author">
+          <div class="review-avatar">J</div>
+          <div>
+            <div class="review-name">James T.</div>
+            <div class="review-meta">Kissimmee, FL</div>
+            <div class="review-google">
+              <svg width="10" height="10" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              Verified Google Review
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Got the Air Care+ membership after my first repair — best decision I made. Two tune-ups a year, priority scheduling, and 15% off parts. Saved over $400 last year alone."</div>
+        <div class="review-author">
+          <div class="review-avatar">S</div>
+          <div>
+            <div class="review-name">Sandra K.</div>
+            <div class="review-meta">Winter Park, FL</div>
+            <div class="review-google">
+              <svg width="10" height="10" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              Verified Google Review
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICE AREAS ── -->
+<section class="areas-section">
+  <div class="section-inner">
+    <div class="section-eyebrow">Service Areas</div>
+    <h2 class="section-title">Serving <span>30+ cities</span><br>across Central Florida.</h2>
+    <p class="section-lead" style="margin-bottom:32px;">If you're in the greater Orlando area, we've got you covered. Same-day service available in all locations.</p>
+    <div class="areas-grid">
+      <a href="/ac-repair-orlando" class="area-pill"><span class="area-dot"></span>Orlando</a>
+      <a href="/ac-repair-kissimmee" class="area-pill"><span class="area-dot"></span>Kissimmee</a>
+      <a href="/ac-repair-winter-park" class="area-pill"><span class="area-dot"></span>Winter Park</a>
+      <a href="/ac-repair-sanford" class="area-pill"><span class="area-dot"></span>Sanford</a>
+      <a href="/ac-repair-clermont" class="area-pill"><span class="area-dot"></span>Clermont</a>
+      <a href="/ac-repair-apopka" class="area-pill"><span class="area-dot"></span>Apopka</a>
+      <a href="/ac-repair-winter-garden" class="area-pill"><span class="area-dot"></span>Winter Garden</a>
+      <a href="/ac-repair-st-cloud" class="area-pill"><span class="area-dot"></span>St. Cloud</a>
+      <a href="/funnel" class="area-pill"><span class="area-dot"></span>Lake Mary</a>
+      <a href="/funnel" class="area-pill"><span class="area-dot"></span>Oviedo</a>
+      <a href="/funnel" class="area-pill"><span class="area-dot"></span>Longwood</a>
+      <a href="/funnel" class="area-pill"><span class="area-dot"></span>Altamonte Springs</a>
+      <a href="/funnel" class="area-pill"><span class="area-dot"></span>Davenport</a>
+      <a href="/funnel" class="area-pill"><span class="area-dot"></span>Celebration</a>
+      <a href="/funnel" class="area-pill"><span class="area-dot"></span>Lake Nona</a>
+      <a href="/funnel" class="area-pill"><span class="area-dot"></span>Windermere</a>
+      <a href="/funnel" class="area-pill"><span class="area-dot"></span>+ More →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <h2 class="final-cta-title">Ready to<br><span>stay cool?</span></h2>
+    <p class="final-cta-sub">Get a free quote in 60 seconds. No commitment. We'll call you within minutes.</p>
+    <div class="final-cta-btns">
+      <a href="/funnel" class="btn-primary" style="font-size:18px;padding:20px 44px;" onclick="gtag('event','bottom_cta_click',{event_category:'engagement'});fbq('track','InitiateCheckout');">
+        Get My Free Quote
+        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </a>
+      <a href="tel:4079999999" class="btn-secondary" style="font-size:16px;padding:20px 28px;">
+        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        Call Now
+      </a>
+    </div>
+    <p class="final-cta-note">Licensed · Insured · 5.0 Google Rating · 30+ Cities Served · Same-Day Available</p>
+  </div>
+</section>
+
+<footer>
+  <p>
+    © 2026 Soligo Air · Central Florida HVAC ·
+    <a href="/funnel">Get a Quote</a> ·
+    <a href="/privacy-policy">Privacy Policy</a> ·
+    FL License #CAC123456
+  </p>
+  <p style="margin-top:6px">
+    Serving Orlando, Kissimmee, Winter Park, Sanford, Clermont, Apopka, Winter Garden, St. Cloud and 25+ more cities.
+  </p>
+</footer>
+
+<script>
+// Scroll-triggered fade-in for cards
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.service-card, .trust-card, .review-card, .process-step, .area-pill').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
+
+// Pass service param to funnel
+document.querySelectorAll('a[href*="funnel?service="]').forEach(link => {
+  link.addEventListener('click', function() {
+    const service = new URLSearchParams(this.search).get('service');
+    if (service) {
+      gtag('event', 'service_click', { event_category: 'engagement', event_label: service });
+    }
+  });
+});
+</script>
+</body>
+</html>
