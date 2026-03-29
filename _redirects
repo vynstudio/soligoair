@@ -1,3 +1,10 @@
+/repair            /sms-01-repair.html              200
+/replacement       /sms-02-replacement.html         200
+/installation      /sms-03-installation.html        200
+/tune-up           /sms-04-tuneup.html              200
+/air-quality       /sms-05-iaq.html                 200
+/air-care-plus     /sms-06-aircareplus.html         200
+/thank-you         /thank-you.html                  200
 # Blog posts — clean URLs (higher priority than netlify.toml)
 /blog/emergency-ac-repair-orlando   /blog-emergency-ac-repair-orlando.html   200
 /blog/ac-repair-cost-orlando        /blog-ac-cost-orlando.html                200
@@ -10,7 +17,6 @@
 /blog/maintenance-calendar          /blog-maintenance-calendar.html           200
 /blog/indoor-air-quality-florida    /blog-indoor-air-quality-florida.html     200
 /blog                               /blog.html                                200
-
 # City pages
 /orlando                /orlando.html               200
 /kissimmee              /kissimmee.html             200
@@ -27,7 +33,6 @@
 /winter-garden          /winter-garden.html         200
 /celebration            /celebration.html           200
 /longwood               /longwood.html              200
-
 # Service pages
 /service-repair         /service-repair.html        200
 /service-replacement    /service-replacement.html   200
@@ -36,7 +41,6 @@
 /service-iaq            /service-iaq.html           200
 /aircare                /aircare.html               200
 /privacy-policy         /privacy-policy.html        200
-
 # AC repair city pages (matching existing organic traffic URLs)
 /ac-repair-sanford         /ac-repair-sanford.html         200
 /ac-repair-clermont        /ac-repair-clermont.html        200
@@ -45,7 +49,6 @@
 /ac-repair-winter-park     /ac-repair-winter-park.html     200
 /ac-repair-winter-garden   /ac-repair-winter-garden.html   200
 /ac-repair-st-cloud        /ac-repair-st-cloud.html        200
-
 # Content pages matching organic traffic URLs
 /ac-maintenance-checklist-florida   /ac-maintenance-checklist-florida.html   200
 /signs-need-new-ac-florida          /signs-need-new-ac-florida.html          200
